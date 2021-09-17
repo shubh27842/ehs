@@ -9,9 +9,7 @@ import Profile from "../../images/Profile.svg";
 import CloseBtn from "../../images/ExitBtn.svg";
 import Other from "../../images/otherwork.svg";
 import Rating from "@material-ui/lab/Rating";
-import { ModalCard } from "../category_page/Card2";
 import { useLocation } from "react-router-dom";
-import Card2 from "../category_page/Card2";
 import Also from "../../images/alsoavai.svg";
 import Button from "@material-ui/core/Button";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
@@ -29,12 +27,10 @@ import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardContent from "@material-ui/core/CardContent";
 import SummaSvg from "../../images/summabet.svg";
-import { BottomAddedCart } from "../product_list2/right/Right";
 import Avatar from "@material-ui/core/Avatar";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 import { connect } from "react-redux";
-import ModelCard3 from "../product_list2/right/ModelCard3";
 import Axios from "axios";
 import swal from "sweetalert";
 import {
@@ -455,14 +451,7 @@ function ProductDescription(props) {
                             key={i}
                             className={i !== 0 ? "ml-2" : "none"}
                           >
-                            <ModalCard
-                              boxDet={v}
-                              setMatDim={setMatDim}
-                              selected={selectMatDim.Material}
-                              addToCart={addToCart}
-                              oriDet={posterData}
-                              name="material"
-                            />{" "}
+                            
                           </Grid.Column>
                         ))}
                       </Grid.Row>
@@ -474,14 +463,7 @@ function ProductDescription(props) {
                             key={i}
                             className={i !== 0 ? "ml-2" : "none"}
                           >
-                            <ModalCard
-                              setMatDim={setMatDim}
-                              selected={selectMatDim.Dimension}
-                              addToCart={addToCart}
-                              boxDet={v}
-                              oriDet={posterData}
-                              name="dimension"
-                            />{" "}
+                            
                           </Grid.Column>
                         ))}
                       </Grid.Row>
@@ -808,12 +790,7 @@ function ProductDescription(props) {
               <Grid.Row className="mt-5" style={{ marginLeft: "-50px" }}>
                 {similarPosterData.slice(0, 5).map((v, i) => (
                   <Grid.Column key={i} className={i !== 0 ? "ml-3" : "m-0 p-0"}>
-                    <Card2
-                      data={v}
-                      addToCart={addToCart}
-                      isCardClickAvail={true}
-                      selectedModalCard={selectedModalCard}
-                    />
+                   
                   </Grid.Column>
                 ))}
               </Grid.Row>
@@ -839,7 +816,7 @@ function ProductDescription(props) {
               display: "none",
             }}
           >
-            <BottomAddedCart det={bottomDet} />
+           
           </div>
           <div
             className="mt-5"
@@ -1027,14 +1004,7 @@ function ProductDescription(props) {
                             key={i}
                             className={i !== 0 ? "ml-4" : "ml-3"}
                           >
-                            <ModalCard
-                              setMatDim={setMatDim}
-                              selected={selectMatDim.Material}
-                              addToCart={addToCart}
-                              boxDet={v}
-                              oriDet={selectedModal}
-                              name="material"
-                            />
+                            
                           </Grid.Column>
                         ))}
                       </Grid.Row>
@@ -1065,14 +1035,7 @@ function ProductDescription(props) {
                             key={i}
                             className={i !== 0 ? "ml-4" : "ml-3"}
                           >
-                            <ModalCard
-                              setMatDim={setMatDim}
-                              selected={selectMatDim.Dimension}
-                              addToCart={addToCart}
-                              boxDet={v}
-                              oriDet={selectedModal}
-                              name="dimension"
-                            />
+                           
                           </Grid.Column>
                         ))}
                       </Grid.Row>
@@ -1098,13 +1061,7 @@ function ProductDescription(props) {
                         </p>
                       </Grid.Row>
                       <Grid.Row className="mx-auto justify-content-center">
-                        <ModelCard3
-                          det={ModalDet.card3}
-                          selectMatDim={selectMatDim}
-                          addToCart={addToCart}
-                          oriDet={selectedModal}
-                          setModalCar={setModalCar}
-                        />
+                        
                       </Grid.Row>
                     </Grid>
                   ) : null}

@@ -8,32 +8,21 @@ import AssetImg from "../../../images/AssetMarking.svg";
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
+ let  title= props.title.replace(" ","-")
   return (
-    <Link to={"/" + props.title.toLowerCase()}>
+    <Link to={"/cat/" + title.toLowerCase()}>
       <div
-        className="mr-5 p-4  coll animateCard"
-        style={{
-          border: "1px solid #D2D2D2",
-          borderRadius: "25px",
-          height: "140px",
-          width: "180px",
-        }}
-      >
-        <div className="mx-auto d-block ">
-          <img
-            className="mx-auto d-block mb-3"
-            style={{
-              width: "55px",
-              height: "55px",
-            }}
+        className="posterCard " >
+        <div className="  d-block ">
+          <img  
+            className="mx-auto d-block   cardImg" 
             src={props.src}
             alt={props.alt}
           />
           <p
-            style={{ fontFamily: "Source Sans Pro", color: "#000000 " }}
-            className="text-center mt-3"
+            className=" posterTitle"
           >
-            {props.title}{" "}
+            {props.title}
           </p>
         </div>
       </div>
@@ -43,22 +32,12 @@ const Card = (props) => {
 
 const Collections = () => {
   return (
-    <div className="row p-3 pl-5">
-      <div className="col-sm-3 pl-1">
-        <p id="getQText">
-          Get High Quality <br />
-          Prints for your <br /> Workplace
-        </p>
-      </div>
-      <div className="col pl-5">
-        <div className="row pl-3">
+        <div className="posters padding-10 ">
           <Card src={PosterImg} alt="Posters" title="Posters" />
           <Card src={Signages} alt="Signages" title="Signages" />
-          <Card src={FloorImg} alt="Floor Graphics" title="Floor-Graphics" />
-          <Card src={AssetImg} alt="Asset Markings" title="Asset-Marking" />
+          <Card src={FloorImg} alt="Floor Graphics" title="Floor Graphics"/>
+          <Card src={AssetImg} alt="Asset Markings" title="Asset Markings" />
         </div>
-      </div>
-    </div>
   );
 };
 export default Collections;

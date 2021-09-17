@@ -1,18 +1,14 @@
 /*jshint esversion: 6 */
-import React, { useState } from "react";
+import React, { useState ,useEffect, useLayoutEffect} from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
-import HomePage from "./components/homepage/HomePage.jsx";
+import HomePage from "./components/homepage/HomePageNew.jsx";
 import Search from "./components/Search/Search";
 import Category from "./components/category_page/CategoryPage.jsx";
-import SignagesCategory from "./components/signages/CategoryPage.jsx";
-import AssetMarkingCategory from "./components/AssetMarking/CategoryPage.jsx";
-import CampaignsCategory from "./components/Campaigns/CategoryPage.jsx";
-import FloorGraphicsCategory from "./components/FloorGraphics/CategoryPage.jsx";
 import ProductList2 from "./components/product_list2/ProductList2.jsx";
 import NavBar from "./components/homepage/navbar/NavBar";
 import ProductDescription from "./components/productdescription/ProductDescription";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useLocation, BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Cart from "./components/ShoppingCart/ShoppingCart";
 import Dashboard from "./components/CustomerDashboard/Dashboard";
 import Axios from "axios";
@@ -22,14 +18,38 @@ import { connect } from "react-redux";
 import Login from "./components/login/Login";
 import Signup from "./components/login/Signup.jsx";
 import Otp from "./components/login/Otp";
+import ForgotPass from "./components/login/ForgotPass";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
+import TermsAndConditions from "./components/TermsAndConditions/TermAndConditions";
 import Support from "./components/Support/Support";
 import Affiliate from "./components/Affliate/Affliate";
 import Faq from "./components/Faq/Faq";
 import Quotation from "./components/Quotation/Quotation";
 import TrackOrder from "./components/TrackOrder/TrackOrder";
+import SignageProductPage from "./components/signages/SignageProductPage";
+import Footer from "./components/homepage/FooterNew";
+import PosterProductPage from "./components/category_page/PosterProductPageN";
+import Contact from "./components/contact/Contact";
+import Checkout from "./components/ShoppingCart/Checkout";
+import About from "./components/About/About";
+import Campaigns from "./components/Campaigns/CategoryPage";
+import Author from "./components/Author/ProductsByAuthor";
+import CouponInfo from "./helper/couponInfo";
+import CartContext from "./helper/cartContext";
+import Success from "./components/SuccessPage/SuccessPage";
+
+const  ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
 
 export const DesContext = React.createContext({});
+
 
 function App(props) {
   let cartJson = JSON.parse(localStorage.getItem("listCart12345678910")) || {
@@ -37,10 +57,12 @@ function App(props) {
   };
 
   const [cartCount, setCartCount] = useState(cartJson.cartList.length || 0);
+  const [cartCountN, setCartCountN] = useState(0);
   const [subCat, setSubCat] = React.useState("");
   const [searchData, setSearchData] = React.useState([]);
+  const [couponDetails,setCouponDetails] = React.useState({});
 
-
+  //console.log(cartCountN)
   const countSetFun = (bottomDet) => {
     setCartCount(cartCount + 1);
 
@@ -58,30 +80,34 @@ function App(props) {
   React.useEffect(() => {
     document.title = "Ehs prints";
 
-    Axios.post(login, { emailid: "naveen@gmail.com", password: "1234" })
+    /*Axios.post(login, { emailid: "naveen@gmail.com", password: "1234" })
       .then((res) => {
         props.setLoginResponse(res.data.token);
         localStorage.setItem("ehstoken12345678910", res.data?.token);
       })
       .catch((err) => {
         console.log(err);
-      });
+      });*/
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchData]);
 
   return (
     <div className="App">
       <DesContext.Provider value={{ DesDetail: setDescription }}>
-        <Router>
+      <CouponInfo.Provider value={[couponDetails,setCouponDetails]}>
+      <CartContext.Provider value={[cartCountN, setCartCountN]}>
+        <Router >
+        <ScrollToTop />
           <NavBar
-            num={cartCount}
-            setSubCat={setSubCat}
-            setSearchData={setSearchData}
-            searchData={searchData}
           />
+          
           <Switch>
             <Route exact path="/">
               <HomePage />
+            </Route>
+
+            <Route exact path="/about">
+              <About />
             </Route>
 
             <Route exact path="/track">
@@ -94,6 +120,10 @@ function App(props) {
 
             <Route exact path="/privacy-policy">
               <PrivacyPolicy />
+            </Route>
+
+            <Route eact path="/termsandconditions">
+              <TermsAndConditions />
             </Route>
 
             <Route exact path="/quotation">
@@ -111,36 +141,110 @@ function App(props) {
             <Route exact path="/affiliate">
               <Affiliate />
             </Route>
+            <Route exact path="/contact">
+              <Contact />
+            </Route>
 
-            <Route exact path="/posters">
+            <Route exact path="/cat/:catSlug">
               <Category setCartCountFun={countSetFun} />
             </Route>
 
-            <Route exact path="/signages">
-              <SignagesCategory setCartCountFun={countSetFun} />
-            </Route>
-
-            <Route exact path="/floor-graphics">
-              <FloorGraphicsCategory setCartCountFun={countSetFun} />
-            </Route>
-
-            <Route exact path="/asset-marking">
-              <AssetMarkingCategory setCartCountFun={countSetFun} />
-            </Route>
-
             <Route exact path="/campaigns">
-              <CampaignsCategory setCartCountFun={countSetFun} />
+              <Campaigns />
             </Route>
 
-            <Route exact path="/posters/HINDI">
+            <Route exact path="/:catSlug/subcat/:subCatSlug">
               <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
             </Route>
 
-            <Route exact path="/posters/BILINGUAL-HINDI-AND-ENGLISH">
+            <Route exact path="/:catSlug/:subCatSlug/product/id=:productId">
+              <PosterProductPage  />
+            </Route>
+
+            <Route exact path="/author/:authorSlug/products">
+              <Author />
+            </Route>
+
+            <Route exact path="/signages/PPE/ProductName">
+              <SignageProductPage  />
+            </Route>
+
+            <Route exact path="/item/:id">
+              <ProductDescription
+                setCartCountFun={countSetFun}
+                navCount={cartCount}
+              />
+            </Route>
+            
+            <Route path="/cart">
+              <Cart
+                setCartCount={setCartCount}
+                navCount={cartCount}
+                det={Description}
+                setCartCountFun={countSetFun}
+              />
+            </Route>
+
+            
+            
+            <Route  path="/checkout">
+              <Checkout />
+            </Route>
+
+            <Route path="/success">
+              <Success />
+            </Route>
+            
+            <Route exact path="/login">
+              <Login />
+            </Route>
+
+            <Route exact path="/forgotpassword">
+              <ForgotPass />
+            </Route>
+
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+
+            <Route exact path="/activate">
+              <Otp />
+            </Route>
+
+            <Route exact path="/dashboard">
+              <Dashboard setCartCountFun={countSetFun} />
+            </Route>
+          </Switch>
+
+          <Footer />
+        </Router>
+        </CartContext.Provider>
+        </CouponInfo.Provider>
+      </DesContext.Provider>
+    </div>
+  );
+}
+
+const mapStateToProps = (state) => {
+  return {
+    loginResponse: state,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setLoginResponse: (payload) => dispatch(setLoginResponse(payload)),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+
+
+
+/*<Route exact path="/posters/BILINGUAL-HINDI-AND-ENGLISH">
               <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
             </Route>
 
-            <Route exact path="/posters/PPE">
+            <Route exact path="/posters/">
               <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
             </Route>
 
@@ -178,105 +282,4 @@ function App(props) {
 
             <Route exact path="/posters/COVID-19">
               <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/signages/SIGNAL-TEMPLATE-SHEETS">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/signages/PICTOGRAMS">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/signages/PRE-PRINTED">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/campaigns/FIT-INDIA">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/campaigns/MONSOON-SAFETY">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/campaigns/WORK-RIGHT">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/campaigns/HOME-ALONE">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/campaigns/LAB-AND-SCHOOL-SAFETY">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/campaigns/NATURE-AND-SAFETY">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/floor-graphics/COVID-19">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/floor-graphics/ROAD-SAFETY">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/floor-graphics/WAREHOUSE">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/floor-graphics/PUBLIC-PLACE">
-              <ProductList2 setCartCountFun={countSetFun} subCat={subCat} />
-            </Route>
-
-            <Route exact path="/item/:id">
-              <ProductDescription
-                setCartCountFun={countSetFun}
-                navCount={cartCount}
-              />
-            </Route>
-
-            <Route path="/cart">
-              <Cart
-                setCartCount={setCartCount}
-                navCount={cartCount}
-                det={Description}
-                setCartCountFun={countSetFun}
-              />
-            </Route>
-            <Route exact path="/login">
-              <Login />
-            </Route>
-
-            <Route exact path="/signup">
-              <Signup />
-            </Route>
-
-            <Route exact path="/activate">
-              <Otp />
-            </Route>
-
-            <Route exact path="/dashboard">
-              <Dashboard setCartCountFun={countSetFun} />
-            </Route>
-          </Switch>
-        </Router>
-      </DesContext.Provider>
-    </div>
-  );
-}
-
-const mapStateToProps = (state) => {
-  return {
-    loginResponse: state,
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setLoginResponse: (payload) => dispatch(setLoginResponse(payload)),
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+            </Route>*/

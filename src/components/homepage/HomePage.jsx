@@ -2,16 +2,14 @@
 import React from "react";
 import Design from "./design/Design";
 import Collections from "./collections/Collections";
-import LeftImages from "./leftimages/LeftImages";
-import Right from "./right/Right";
 import BottomImg from "../../images/BottomImg.svg";
-import { Grid } from "semantic-ui-react";
-import One from "../../images/One.svg";
-import Two from "../../images/Two.svg";
-import Three from "../../images/Three.svg";
-import Four from "../../images/Four.svg";
-import Five from "../../images/Five.svg";
-import { Link } from "react-router-dom";
+import Promotions from "./promotions/Promotions"
+import PrintPromise from "./printPromise/PrintPromise";
+import Bestsellers from "./bestsellers/Bestsellers";
+import Visitor from "./visitor/Visitor";
+import satisfaction from "../../images/Satisfaction.png";
+import customer from "../../images/customer.png";
+import payment from "../../images/payment.png";
 
 const HomePage = (props) => {
   const [authUser, setAuthUser] = React.useState("");
@@ -23,117 +21,93 @@ const HomePage = (props) => {
            JSON.parse(localStorage.getItem("userDetails123")).phonenumber
        );
    }, [props.loginResponse]);
-  const imgs = [One, Two, Three, Four, Five];
+  
   return (
     <>
       <Design />
       <Collections />
-      <div className="row">
-        <div className="col-3">
-          <LeftImages imgs={imgs} />
+      <div style={{
+        borderTop: "6px solid #F6F6F6",
+        margin: "0 0 60px 0"
+      }}></div>
+      <Promotions />
+      <PrintPromise />
+      <Visitor />
+      <div style={{
+        borderTop: "6px solid #F6F6F6",
+        margin: "20px 0 20px 0"
+      }}></div>
+      <Bestsellers />
+      <div className="d-none d-sm-flex justify-content-around align-items-center mx-auto" style={{width: "1200px", height: "140px",marginTop: "30px"}}>
+        <div className="d-flex align-items-center ">
+          <div className="d-flex justify-content-center align-items-center" style={{width: "90px",height: "90px", borderRadius: "50%",background: "#F4F3F4"}}>
+            <img src={payment} alt="payment" className="" style={{transform: "scale(0.9)"}} />
+          </div>
+          <div className="d-flex flex-column" style={{marginLeft: "35px"}}>
+            <p className=" mb-0" style={{
+              fontFamily: "Source Sans Pro",
+              fontStyle: "normal",
+              fontWeight: "600",
+              fontSize: "18px",
+              lineHeight: "23px",
+              color: "#000000",
+            }}>Payment</p>
+            <p  className=" mb-0" style={{
+              fontFamily: "Source Sans Pro",
+              fontStyle: "normal",
+              fontWeight: "normal",
+              fontSize: "16px",
+              lineHeight: "20px",
+              color: "#9A999F",
+            }}>Secure</p>
+          </div>
         </div>
-        <div className="col pr-5">
-          <Right />
+        <div className="d-flex align-items-center ">
+          <div className="d-flex justify-content-center align-items-center" style={{width: "90px",height: "90px", borderRadius: "50%",background: "#F4F3F4"}}>
+          <img src={customer} alt="customer" className="" style={{transform: "scale(0.9)"}} />
+          </div>
+          <div className="d-flex flex-column align-items-start  " style={{marginLeft: "35px"}}>
+            <p className=" mb-0" style={{
+              fontFamily: "Source Sans Pro",
+              fontStyle: "normal",
+              fontWeight: "600",
+              fontSize: "18px",
+              lineHeight: "23px",
+              color: "#000000",
+            }}>24/7 Customer Care</p>
+            <p  className=" mb-0" style={{
+              fontFamily: "Source Sans Pro",
+              fontStyle: "normal",
+              fontWeight: "normal",
+              fontSize: "16px",
+              lineHeight: "20px",
+              color: "#9A999F",
+            }}>Mon to Fri (9:00 to 17:00)</p>
+          </div>
         </div>
-      </div>
-      <div className="p-5 mt-3" style={{ backgroundColor: "#003459" }}>
-        <img
-          className="mb-5"
-          style={{ display: "block", margin: "0 auto", width: "90%" }}
-          src={BottomImg}
-          alt="Bottom Img"
-        />
-        <Grid>
-          <Grid.Row columns="4">
-            <Grid.Column className="ml-5">
-              <ul>
-                <h3 className="footerhead">Products</h3>
-                <Link to="/posters" className="footertxt">
-                  Posters
-                </Link>
-                <Link to="/signages" className="footertxt">
-                  Signages
-                </Link>
-                <Link to="/campaigns" className="footertxt">
-                  Campaigns
-                </Link>
-                <Link to="/floor-graphics" className="footertxt">
-                  Floor Graphics
-                </Link>
-                <Link to="/asset-marking" className="footertxt">
-                  Asset Marking
-                </Link>
-                <Link to="/posters" className="footertxt">
-                  Do It Yourself(DIY)
-                </Link>
-              </ul>
-            </Grid.Column>
-            <Grid.Column className="ml-5 pl-5">
-              <ul>
-                <h3 className="footerhead">My Account</h3>
-                {authUser ? (
-                  <>
-                    <Link to="/dashboard" className="footertxt">
-                      Profile
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <li className="footertxt">Profile</li>
-                  </>
-                )}
-
-                {authUser ? (
-                  <>
-                    <Link to="/dashboard" className="footertxt">
-                      Order History
-                    </Link>
-                  </>
-                ) : (
-                  <>
-                    <li className="footertxt">Order History</li>
-                  </>
-                )}
-
-                <Link to="/track" className="footertxt">
-                  Order Tracking
-                </Link>
-                <Link to="/signup" className="footertxt">
-                  Create An Account
-                </Link>
-                <li className="footertxt">New User Guide</li>
-              </ul>
-            </Grid.Column>
-            <Grid.Column className="ml-5 pl-5">
-              <ul className="footertxt">
-                <h3 className="footerhead">Contact Us</h3>
-                <li>Timings (Mon - Sat: 7:00 - 21:00)</li>
-                <li>
-                  45, old Agrawal Nagar, Indore, Madhya Pradesh, Pin: 452001
-                </li>
-                <li>Mobile No : +91 9632418602</li>
-                <li>Email ID : hello@ehsposters.com</li>
-              </ul>
-            </Grid.Column>
-            <Grid.Column className="ml-5">
-              <ul>
-                <h3 className="footerhead">About</h3>
-                <Link to="/privacy-policy" className="footertxt">
-                  Privacy Policies
-                </Link>
-                <Link to="/faq" className="footertxt">
-                  FAQ
-                </Link>
-                <Link to="/support" className="footertxt">
-                  Support
-                </Link>
-                <Link to="/affiliate" className="footertxt">
-                  Join Us (Affiliate)
-                </Link>
-              </ul>
-            </Grid.Column>
-          </Grid.Row>
-        </Grid>
+        <div className="d-flex align-items-center ">
+          <div className="d-flex justify-content-center align-items-center" style={{width: "90px",height: "90px", borderRadius: "50%",background: "#F4F3F4"}}>
+            <img src={satisfaction} alt="satisfaction" className="" style={{transform: "scale(0.9)"}} />
+          </div>
+          <div className="d-flex flex-column" style={{marginLeft: "35px"}}>
+            <p className=" mb-0" style={{
+              fontFamily: "Source Sans Pro",
+              fontStyle: "normal",
+              fontWeight: "600",
+              fontSize: "18px",
+              lineHeight: "23px",
+              color: "#000000",
+            }}>100% Satisfaction</p>
+            <p  className=" mb-0" style={{
+              fontFamily: "Source Sans Pro",
+              fontStyle: "normal",
+              fontWeight: "normal",
+              fontSize: "16px",
+              lineHeight: "20px",
+              color: "#9A999F",
+            }}>Feedbacks</p>
+          </div>
+        </div>
       </div>
     </>
   );

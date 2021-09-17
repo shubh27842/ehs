@@ -32,7 +32,7 @@ const Supplier = (props) => {
 
   return (
     <>
-      <Grid className="ml-3" style={{ width: "600px" }}>
+      <Grid className="ml-3 d-block" style={{ width: "600px" }}>
         <Grid.Row>
           <p className="choose">CHOOSE A SUPLIER</p>
         </Grid.Row>
@@ -325,38 +325,39 @@ const Quotation = (props) => {
 
   return (
     <>
-      <div
-        style={{
-          width: "660px",
-          background: "lightgrey",
-          height: "68px",
-          borderTopRightRadius: "15px",
-          borderTopLeftRadius: "15px",
-        }}
-        className="mx-auto mt-5"
+        <div
+            style={{
+              width: "660px",
+              height: "710px",
+              borderTopRightRadius: "15px",
+              borderTopLeftRadius: "15px",
+            }}
+        className="mx-auto mt-5 d-block "
       >
-        <Grid className="quotation mb-5 p-3 pl-4">
+        <div className="quotation mb-5 p-3 pl-4 " >
           <Link to="/cart">
             <HighlightOffIcon
-              style={{ color: "black", position: "absolute", right: "355px" }}
+              style={{ color: "black", position: "absolute", right: "405px",top: "140px" }}
             />
           </Link>
 
+          <div style={{}}>
           <Grid.Row
-            className="quotation1 mt-1 ml-4"
+            className="quotation1 mt-1 "
             style={{
-              fontFamily: "Lato",
+              fontFamily: "Source Sans Pro",
               fontStyle: "normal",
-              fontWeight: "500",
-              fontSize: "24px",
-              lineHeight: "29px",
-              color: "#003459",
+              fontWeight: "600",
+              fontSize: "36px",
+              lineHeight: "36px",
+              color: "#003459",              
             }}
           >
-            2 STEPS TO SELF GENERATE PROFORMO INVOICE
+            PROFORMO INVOICE
           </Grid.Row>
+          </div>
 
-          <Grid.Row columns="2" className="mt-4">
+          <Grid.Row columns="2" className="mt-4 " style={{height: "94%"}}>
             <Grid.Column style={{ width: "10%" }}>
               <div className={classes.root}>
                 <Stepper activeStep={activeStep} orientation="vertical">
@@ -394,9 +395,9 @@ const Quotation = (props) => {
                   : { marginLeft: "69px", marginTop: "-105px" }
               }
             >
-              <button id="loginBtn">PREVIEW PROFORMA</button>
+              <button id="loginBtn" className="my-3">PREVIEW PROFORMA</button>
             </Grid.Row>
-            <Grid.Row className="mt-5 pl-5 pr-5">
+            <Grid.Row className="mt-2 pl-5 pr-5">
               <p className="chooseUnder">
                 Note: Creating performa invoice is a record of intent of the
                 seller to supply goods in the cart. Supplies will be subject to
@@ -404,8 +405,9 @@ const Quotation = (props) => {
               </p>
             </Grid.Row>
           </Grid.Row>
-        </Grid>
+        </div>
       </div>
+
     </>
   );
 };

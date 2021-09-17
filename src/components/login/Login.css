@@ -1,51 +1,36 @@
 .loginPage {
   background-color: white;
-  width: 626px;
-  left: 407px;
+  width: 570px;
   margin-top: 112px;
   background: #ffffff;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
 }
-
-#ehsLogoImg {
-  height: 61px;
-  width: 200px;
-  left: 620px;
-  top: 145px;
-  border-radius: 0px;
-  margin: 0 auto;
+#accountIcon{
+  width: 62px;
+  height: 62px;
+  color: #003459;
+  margin-right: 20px;
 }
-
-#ehsLogoLabel {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 29px;
-  color: #000000;
+#ehsLogoImg {
+  height: 50px;
+  width: 160px;
+  border-radius: 0px;
 }
 
 #loginUserEmail,
 #loginUserPass {
   margin: 0 auto;
   width: 506px;
-  height: 55px;
-  left: 467px;
-  top: 283px;
-  /* grey */
+  height: 45px;
   border: 1px solid #757575;
   box-sizing: border-box;
   border-radius: 8px;
-
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
   font-size: 20px;
   line-height: 24px;
-  /* identical to box height */
-
-  /* grey */
   text-indent: 10px;
   color: #757575;
 }
@@ -72,8 +57,8 @@
 
 #loginBtn {
   width: 506px;
-  height: 55px;
-  background: #2e77aa;
+  height: 50px;
+  background: #003459;
   border-radius: 8px;
   font-family: Lato;
   font-style: normal;
@@ -83,14 +68,49 @@
   text-align: center;
   color: #ffffff;
 }
+.or{
+  font-family: Lato;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+text-align: center;
+color: #000000;
+margin: 5px 0;
+}
+.keepSignedIn{
+  font-family: Lato;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+color: #757575;
+margin-left: 5px;
+}
+.forgotPassword{
+  font-family: Lato;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+color: #56CCF2;
+
+}
 
 #signupBtn {
   width: 506px;
-  height: 55px;
+  height: 45px;
   background: #ffffff;
   border: 1px solid #003459;
   box-sizing: border-box;
   border-radius: 8px;
+  color: #003459;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+
 }
 
 #loginUserEmail1 {
@@ -165,7 +185,6 @@ textarea {
   color: #757575;
 }
 
-
 #loginBtn1 {
   width: 506px;
   height: 55px;
@@ -188,7 +207,6 @@ textarea {
   box-sizing: border-box;
   border-radius: 8px;
 }
-
 
 #loginUseraddress1 {
   margin: 0 auto;
@@ -234,4 +252,209 @@ textarea {
   /* grey */
   text-indent: 10px;
   color: #757575;
+}
+.note{
+  width: 490px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0 auto;
+  color: #000000;
+}
+.registerAs{
+  font-family: Lato;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 22px;
+text-align: center;
+text-decoration-line: underline;
+color: #0962A2;
+}
+
+.resendOTP{
+  position: absolute;
+  top: 14px;
+  right: 30px;
+  
+}
+
+
+
+.errorMsg{
+  font-size: 12px;
+  font-family: Lato;
+}
+.passMatch{
+  color: rgb(32, 212, 32);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+.passNotMatch{
+  color: rgb(182, 7, 7);
+  position: absolute;
+  top: 10px;
+  right: 15px;
+}
+.showError{
+  display: block!important;
+}
+
+
+@media screen and (max-width: 480px){
+  .loginPage{
+    width: 348px;
+  }
+  #accountIcon{
+    width: 50px;
+    height: 50px;
+  }
+  #ehsLogoImg{
+    width: 131px;
+    height: 40px;
+  }
+  #loginUserEmail,
+#loginUserPass{
+  width: 310px;
+  margin: 0;
+  font-size: 18px;
+}
+.keepSignedIn, .forgotPassword{
+  font-size: 14px;
+  line-height: 17px;
+}
+#loginBtn{
+  width: 310px;
+  height: 45px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 500;
+}
+#signupBtn{
+  width: 310px;
+  height: 45px;
+  font-size: 20px;
+  line-height: 25px;
+  font-weight: 500;
+}
+.or{
+  margin: 15px 0;
+}
+.note{
+  width: 281px;
+}
+.registerAs{
+  width: 305px;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+.resendOTP{
+  font-size: 12px!important;
+}
+
+}
+
+
+
+/*  Forgot Password  */
+
+.forgotBox{
+  width: 570px;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  margin-top: 55px;
+  margin-bottom: 58px;
+  padding: 18px 34px 24px 33px;
+}
+.forgotHead{
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
+}
+.forgotNote{
+  width: 100%;
+  height: 99px;
+  background: rgba(252, 219, 134, 0.4);
+  border: 1px solid #FDCA40;
+  box-sizing: border-box;
+  border-radius: 10px;
+  font-family: Source Sans Pro;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+  padding: 21px 8px 32px 21px;
+  margin-bottom: 18px;
+}
+.forgotInput{
+  width: 100%;
+  height: 45px;
+  border: 1px solid #757575;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 24px;
+  color: #757575;
+  text-indent: 19px;
+  margin-bottom: 14px;
+}
+.resetBtn{
+  width: 224px;
+  height: 50px;
+  background: #003459;
+  border-radius: 8px;
+  border: none;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #FFFFFF;
+  
+}
+#OTP, #PASSWORD, #C_PASSWORD, #SUBMITBTN{
+  display: none;
+}
+@media screen and (max-width: 480px) {
+    .forgotBox{
+      width: 350px;
+      margin-top: 45px;
+      margin-bottom: 45px;
+      padding: 18px 30px 24px 30px;
+    }
+    .forgotHead{
+      font-size: 20px;
+      line-height: 25px;
+    }
+    .forgotNote{
+      font-size: 16px;
+      line-height: 20px;
+      padding: 18px 9px 19px 18px;
+      margin-bottom: 14px;
+    }
+    .forgotInput{
+      height: 38px;
+      text-indent: 17px;
+      font-size: 18px;
+      line-height: 22px;
+      margin-bottom: 10px;
+    }
+    .resetBtn{
+      height: 40px;
+      font-size: 18px;
+      line-height: 22px;
+    }
 }

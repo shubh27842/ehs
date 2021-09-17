@@ -1,0 +1,124 @@
+.sellerContainer{
+    margin: 0 100px;
+}
+.promiseHeading{
+    padding-top: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #003459;
+}
+.imgBox{
+    width: 249px;
+}
+#carouselItem{
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
+    grid-row-gap: 50px;
+}
+#imgBoxImage{
+    width: 249px;
+    height: 249px;
+
+}
+#imgBoxTitle{
+           font-family: "Source Sans Pro";
+            color: #000;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: left;  
+}
+.seemore{
+                font-family: "Source Sans Pro";
+                font-style: normal;
+                font-weight: normal;
+                font-size: 24px;
+                line-height: 57px;
+                cursor: pointer;
+                text-align: center;
+                letter-spacing: 0.2px;
+                text-decoration: underline;
+                color: #40CEFC;
+}
+.bestsellerPagination{
+    position: absolute;
+    top: 1926px;
+    width: 75%;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
+}
+#sellerH{
+    margin: 0;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    color: #C6C6C6;
+}
+ .sellerHead.active{
+    color: #003459!important;
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+
+@media (max-width: 480px){
+    .bestsellerPagination{
+        top: 2110px;
+        width: 80%;
+        grid-template-columns: 53px 53px 53px 53px;
+        grid-gap: 0;
+    }
+    #carouselItem{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-row-gap: 33px;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #imgBoxTitle{
+        font-size: 12px;
+        line-height: 15px;
+        margin: 0;
+    }
+    .sellerContainer{
+        width: 100%;
+        margin: 0;
+    }
+    .promiseHeading{
+        font-size: 20px;
+    }
+
+    #sellerH{
+        font-size: 12px;  
+        line-height: 15px;
+    }
+    .sellerHead.active{        
+        color: #003459!important;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+    }
+    
+    #imgBoxImage{
+        width: 162px;
+        height: 162px;
+    }
+    .imgBox{
+        width: 162px;
+    }
+    .seemore{
+        font-size: 18px;
+    }
+}

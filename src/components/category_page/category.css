@@ -1,0 +1,239 @@
+.shopByCardContainer{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 6% 2%;
+    justify-content: start;
+}
+.bestsellerBox{
+    margin: 30px 50px 30px 0px;
+    display: inline-block;
+    width: 220px;
+}
+.bestsellerBoxImg{
+    width: 220px;
+    height: 250px;
+    margin-bottom: 10px;
+}
+.bestsellerBoxTitle{
+        font-family: "Source Sans Pro";
+        color: black;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 14px;      
+}
+.padding-10{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.catHead{
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 57px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #003459;
+}
+.shopByHead{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 57px;
+    letter-spacing: 0.2px;
+    color: #003459;
+    margin-bottom: 30px;
+    margin-top: 45px;
+    margin-left: 8px;
+}
+.catCardContainer{
+    width: 214px;
+    height: 214px;
+    position: relative;
+}
+.catCardImg{
+    width:  214px;
+    height: 214px;
+}
+.cardOverlay{
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(8px);
+    height: 214px;
+    width: 214px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 1;
+    -webkit-transition: .5s ease;
+    -ms-transition: .5s ease;
+    -moz-transition: .5s ease;
+    transition: .5s ease;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    padding: 10px;
+}
+.catCardContainer:hover .cardOverlay{
+opacity: 0 ;
+}
+.shopByCategoryCarousel{
+display: flex;
+justify-content: space-between;
+
+}
+.carouselArrow{
+    margin-top: 70px;
+    display: flex;
+    align-items: center;
+    float: right;
+    margin-right: 33px;
+}
+.margin-9{
+    margin-left: 9%;
+    margin-right: 9%;
+}
+#carouselItem2{
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-around;
+    grid-row-gap: 50px;
+}
+.bestSellerCarouselItem{
+    margin-top: 76px;
+    padding: 0 100px;
+}
+.promiseHeading1{
+    padding-top: 20px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #003459;
+    margin-left: 39px;
+}
+.bottomBanner50{
+    margin-top: 46px;
+    margin-bottom: 40px;
+    width: 971px;
+    height: 145px;
+}
+.designation{
+    font-family: Source Sans Pro;
+font-style: normal;
+font-weight: 300;
+font-size: 36px;
+line-height: 57px;
+/* identical to box height, or 158% */
+
+letter-spacing: 0.2px;
+
+color: #000000;
+}
+.authorProfile{
+    width: 300px;
+    height: 300px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+
+}
+.authorInfo{
+    font-family: Source Sans Pro;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 40px;
+/* or 222% */
+
+letter-spacing: 0.2px;
+
+color: #757575;
+}
+@media screen and (max-width: 480px){
+    .authorInfo{
+        font-size: 14px;
+line-height: 28px;
+    }
+    .authorProfile{
+        width: 110px;
+height: 110px;
+    }
+    .designation{
+        font-size: 18px;
+line-height: 40px;
+    }
+    .bottomBanner50{
+        margin-top: 27px;
+        margin-bottom: 28px;
+        width: 341px;
+        height: 51px;
+    }
+    .promiseHeading1{
+        font-size: 20px;
+        margin-left: 20px;
+    }
+    .bestSellerCarouselItem{
+        margin-top: 42px;
+        padding: 0;
+    }
+    #carouselItem2{
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto;
+        grid-row-gap: 33px;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .margin-9{
+        margin-right: 3%;
+        margin-left: 4%;
+    }
+    .carouselArrow{
+        margin-top: 14px;
+        margin-right: 20px;
+    }
+    .padding-10{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .catHead{
+        font-size: 24px;
+        line-height: 40px;
+    }
+    .shopByHead{
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 24px;
+        margin-top: 14px;
+    }
+    .shopByCardContainer{
+        grid-template-columns: auto auto;
+        grid-gap: 20px 20px;
+        justify-content: space-evenly;
+    }
+    .catCardContainer, .catCardImg , .cardOverlay{
+        width: 150px;
+        height: 150px;
+    }
+   
+    .bestsellerBoxImg{
+        width: 90%;
+        height: 100%;
+        margin-bottom: 0;
+    }
+    .bestsellerBox{
+        margin: 5%;
+        width: 40%;
+    }
+}
+
+
+
+
+
+

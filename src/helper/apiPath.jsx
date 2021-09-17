@@ -1,5 +1,6 @@
 /*jshint esversion: 6 */
-const url = window.location.protocol+"//"+window.location.hostname + ":8080/";
+//const url = window.location.protocol+"//"+window.location.hostname + ":8080/";
+const url = process.env.REACT_APP_BACKEND;
 
 const login = url + "auth/login";
 const signup = url + "auth/signup";

@@ -1,10 +1,64 @@
-#getQText {
-  font-family: Source Sans Pro;
-  font-size: 35px;
+.posters{
+  margin-top: 35px;
+  margin-bottom: 65px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  justify-content: space-around;
+}
+.posterCard{
+  width: 190px;
+  height: 169px;
+  background: #FFFFFF;
+  border: 1px solid #D2D2D2;
+  box-sizing: border-box;
+  border-radius: 25px;
+}
+.posterTitle{
+  font-family: "Source Sans Pro";
   font-style: normal;
-  font-weight: 700;
-  line-height: 45px;
-  letter-spacing: 0.20000000298023224px;
-  text-align: left;
-  color: #003459;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  color: #000000;
+}
+.cardImg{
+  width: 60px;
+  height: 60px;
+  margin-bottom: 35px;
+  margin-top: 22px;
+}
+.posterCard:hover {
+  border-radius: 25px;
+  transform: scale(1.05);
+  box-shadow: 0px 0px 15px #a8a8a8;
+  transition: all 500ms ease;
+}
+.posterCard:hover .posterTitle{
+  text-decoration-line: none;
+}
+@media (max-width: 480px){
+  .posters{
+    margin-top: 25px;
+    margin-bottom: 48px;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 34px;
+    grid-column-gap: 40px;
+  }
+  .posterCard{
+    width: 110px;
+    height: 100px;
+  }
+  .cardImg{
+    width: 36px;
+    height: 36px;
+    margin-top: 18px;
+    margin-bottom: 13px;
+  }
+  .posterTitle{
+    font-size: 13px;
+    line-height: 16px;
+  }
 }

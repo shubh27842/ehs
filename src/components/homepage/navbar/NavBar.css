@@ -1,21 +1,285 @@
 #navBarTop {
-  padding: 0px;
+  padding-left: 10%;
+  padding-right: 10%;
   background: #003459;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.2);
 }
-#ehsLogoImg {
-  width: 100px;
-  height: 35px;
+#navbarNav{
 }
 
 .textColorAndWeight {
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 14px;
+  letter-spacing: 0.2px;
+  color: #F2994A;
+  
+}
+.textColorAndWeight:hover{
+  color: #db7216;
 }
 
 .searchCategory:hover {
   background-color: #003459;
-  color: #ffffff;
+  color: #ffffff!important;
+  
+}
+
+#navbarContainer{
+  padding-left: 10%;
+  padding-right: 10%;
+  background: #003459;
+}
+.addDisplay{
+  display: block!important;
+}
+.searchInput{
+  display: none;
+}
+.searchBar{
+  width: 835px;
+}
+.searchDropBtn{
+  width: 200px;
+  color: #757575!important;
+  padding-right: 65px;
+  height: 35px;
+  border-right: 1px solid lightgrey;
+}
+#searchDropCatId{
+  width: 200px;
+  position: absolute;
+  top: 2px;
+  border-top: none;
+  box-shadow: none;
+  z-index: 6;
+  background: #ffffff;
+}
+#searchDropCatId.show{
+  height: 170px;
+}
+#searchDropCatId .btnCat{
+  padding-left: 40px;
+}
+.searchBarInput{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 1px solid #757575;
+  border-left: none;
+  height: 35px;
+  margin-top: 0px;
+  width: 470px;
+  margin-right: 5px;
+}
+.searchBarInput:focus{
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 1px solid #757575;
+  border-left: none;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown:hover .searchDropBtnHover{
+  border-bottom-left-radius: none!important;
+  border-bottom-right-radius: none!important;
+}
+@media screen and (max-width: 480px){
+  .dropdown-content{
+    display: block;
+    transform: translateX(-100%);
+    height: 100%;
+    width: 100%;
+    background: #003459;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all ease 0.25s;
+  }
+  .searchBar{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .searchDropBtn{
+    width: 111px;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .searchDropCat{
+    width: 111px;
+    background: #ffffff;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    padding-right: 0;
+    padding-left: 0;
+    
+  }
+  .searchBarInput{
+    width: 100%;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    margin-right: 0;
+  }
+   #searchDropCatId{
+    display: block!important;
+    -webkit-transform: translate(0%);
+    -moz-transform: translate(0%);
+    -ms-transform: translate(0%);
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    background: #ffffff;
+    width: 121px;
+    height: 158px;
+    padding: 0 4px;
+    top: -1px;
+    
+  }
+  #searchDropCatId.dropdown-content{
+    min-width: 121px!important;
+  }
+  #searchDropCatId .dropdown-item{
+    width: 111px;
+    padding: 4px;
+    text-align: center;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: 0.2px;
+    margin-top: 6px!important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  } 
+
+  #navBarTop{
+    padding: 10px 5%;
+    width: 100%;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+  }
+  
+  .ehsLogoImg{
+    padding: 0;
+    margin: 0;
+    margin-left: 20px;
+
+  }
+  #searchBoxMobile{
+    background: #003459;
+    position: fixed;
+    top: 55px;
+    left: 0;
+    height: 96px;
+    width: 100%;
+    padding: 10px;
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    transition: all ease 0.5s;
+    z-index: -5;
+  }
+  .slideSearchBox{
+    -webkit-transform: scaleY(1)!important;
+    -moz-transform: scaleY(1)!important;
+    -ms-transform: scaleY(1)!important;
+  }
+  
+  #navbarNav{
+    padding-left: 0;
+    padding-right: 5%;
+    display: block;
+    transform: translateX(-100%);
+    height: 100%;
+    width: 75%;
+    background: #003459;
+    position: fixed;
+    top: 58px;
+    left: 0;
+    transition: all ease 0.25s;
+    z-index: 3;
+  }
+  .nav-item{
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .slideSubMenu{
+  }
+  .searchCategory{
+    color: white;
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    letter-spacing: 0.2px;
+    margin-top: 20px;
+  }
+  .backMenu{ 
+  color: #F2994A;
+  }
+  .searchInput{
+    position: fixed;
+    z-index: 5;
+    border-left: none;
+    border: "0px";
+    margin-top: "1px";
+     width: 75%;
+  }
+.open{
+    display: block;
+  }
+  .searchIcon{
+    color: white;
+     border: 0px; 
+     width: 150px;
+     height: 10%;
+     margin-left: auto;
+  }
+  .rightSide{
+   
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 2!important;
+  }
+  .menuBackBlur {
+    display: block;
+    z-index: 0;
+  }
+
 }

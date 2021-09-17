@@ -5,11 +5,9 @@ import { Link } from "react-router-dom";
 import Card2 from "./Card2";
 import { connect } from "react-redux";
 import $ from "jquery";
-import { BottomAddedCart } from "../product_list2/right/Right";
 import { findMat, findDim } from "../../helper/apiPath";
 import CloseBtn from "../../images/ExitBtn.svg";
 import { ModalCard } from "./Card2";
-import ModelCard3 from "../product_list2/right/ModelCard3";
 import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import NavigateBeforeIcon from "@material-ui/icons/NavigateBefore";
 
@@ -301,7 +299,6 @@ const Search = (props) => {
               display: "none",
             }}
           >
-            <BottomAddedCart det={bottomDet} />
           </div>
         </div>
       </div>
@@ -463,12 +460,7 @@ const Search = (props) => {
                     </p>
                   </Grid.Row>
                   <Grid.Row className="mx-auto justify-content-center">
-                    <ModelCard3
-                      det={ModalDet.card3}
-                      selectMatDim={selectMatDim}
-                      addToCart={addToCart}
-                      oriDet={selectedModal}
-                    />
+                    
                   </Grid.Row>
                 </Grid>
               ) : null}

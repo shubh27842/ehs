@@ -1,0 +1,63 @@
+.promo{
+    margin-bottom: 57px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: space-between;
+}
+.promoCard{
+    width: 240px;
+    height: 348px;
+    border: none;
+}
+.promoCardImg{
+        width: 240px;
+        height: 243px;
+}
+.cardBody{
+    height: 89px;
+}
+.cardTitle{
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 34px;
+    text-align: left;
+    color: #000;    
+}
+.cardText{
+    font-family: "Open Sans";
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    text-align: left;
+    color: #000;
+}
+@media (max-width: 480px){
+    .cardTitle{
+        width: 152px;
+        height: 39px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .cardText{
+        font-size: 10px;
+        line-height: 19px;
+    }
+    .promoCard{
+        width: 150px;
+        height: 220px;
+    }
+    .promoCardImg{
+        width: 150px;
+        height: 151px;
+    }
+    .cardBody{
+        height: 53px;
+    }
+    .promo{
+        margin-bottom: 28px;
+        grid-template-columns: auto auto;
+        justify-content: space-around;
+        grid-row-gap: 20px;
+    }
+}

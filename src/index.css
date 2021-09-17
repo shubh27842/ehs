@@ -6,8 +6,29 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+html,body{
+  overflow-x: hidden;
+  
+}
+* {
+  outline: 0;
+}
+button:focus{
+  outline: 0!important;
+}
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: "source-code-pro", Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+ 
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }

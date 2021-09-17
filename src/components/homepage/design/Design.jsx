@@ -1,24 +1,15 @@
 /*jshint esversion: 6 */
 import React from "react";
 import "./Design.css";
+import banner from "../../../images/banner.jpg";
 
 const Design = () => {
   return (
-    <div className="design row m-0">
-      <div className="col-sm-5 d-flex h-100">
-        <p
-          id="rightText"
-          className="text-center ml-5 justify-content-center align-self-center"
-        >
-          COVID-19 POSTERS TO PROTECT
-          <br /> YOURSELF AND YOUR FAMILIES
-        </p>
-      </div>
-      <div className="rectangles col row ml-5 pl-5">
-        <div id="blueRect" className="rect ml-5"></div>
-        <div id="greenRect" className="rect ml-5"></div>
-        <div id="yellowRect" className="rect ml-5"></div>
-      </div>
+    <div>
+    <div className="design ">  </div>
+    <div className="tagline ">
+      <p>The Best Environment, Health and Safety Prints for your Workplace</p>
+    </div>
     </div>
   );
 };
