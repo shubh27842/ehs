@@ -31,7 +31,8 @@ const Data = [
 const Card = (props) => {
     return (
         <div className=" m-0 promoCard br-22 ">
-            <img src={props.imgsrc} className="promoCardImg br-22" alt="off" />
+           
+            <img src={props.imgsrc} className="promoCardImg" alt="off" />
             <div className="cardBody mt-2  text-center d-flex flex-column justify-content-between">
                 <div className="cardTitle  text-capitalize mb-0">{props.title}</div>
                 <div className="cardText  mb-0 mt-auto" >{props.desc}</div>

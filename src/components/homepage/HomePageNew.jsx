@@ -107,7 +107,7 @@ const HomePage = (props) => {
       <Visitor />
       <div style={{
         borderTop: "6px solid #F6F6F6",
-        margin: "20px 0 20px 0"
+        margin: "0px 0 20px 0"
       }}></div>
       <Bestsellers />
       <div className="d-none d-sm-flex justify-content-around align-items-center mx-auto mb-4" style={{width: "1200px", height: "140px",marginTop: "30px"}}>

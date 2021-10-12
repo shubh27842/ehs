@@ -25,7 +25,7 @@ const Card2 = (props) => {
 
 const PrintPromise = () => {
     return(
-    <div className="d-flex flex-column" style={{ backgroundColor: "#F6F6F6", }}>
+    <div className="d-flex flex-column" style={{ backgroundColor: "#F6F6F6", padding:'40px'}}>
         <p className="promiseHeading   mx-auto">The EHS Prints Promise</p>
         <div className="cardContainer   margin-10">
             <div className="d-flex  upperBox justify-content-between mb-4">

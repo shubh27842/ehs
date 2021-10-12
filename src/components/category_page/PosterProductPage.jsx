@@ -176,6 +176,7 @@ const PosterProductPage = (props) => {
     const [authorPosters, setAuthorPosters] = useState([]);
     const [otherLanguagePoster, setOtherLanguagePoster] = useState([]);
     const [cartCountN, setCartCountN] = useContext(CartContext);
+    const [cartflag,setCartflag]=useState(false)
     let history = useHistory();
 
     //setting default dimension and material
@@ -349,9 +350,33 @@ const PosterProductPage = (props) => {
                 customClass: "toastStructure"
             })
     }
+    // add to cart fLAG
+    useEffect(()=>{
+
+        if(catSlug==='posters'){
+            if(material && dim){
+                setCartflag(true)
+            }else{
+                setCartflag(false)
+            }
+        }else{
+            console.log('not poster')
+            if(dim){
+                setCartflag(true)
+            }else{
+                setCartflag(false)
+            }
+
+        }
+        console.log('material:',material,'dimension:',dim,'cartflag:',cartflag)
+
+    },[material,dim])
+
+
 
     const addToCart = () => {
         //console.log(localStorage.getItem("ehstoken12345678910"));
+    if(cartflag){
         if (authUser) {
             Axios.post(`${API}auth/update_user_cart`, {
                 poster_obj_id: product._id,
@@ -421,6 +446,90 @@ const PosterProductPage = (props) => {
 
         }
     }
+}
+
+
+    const buyNow = () => {
+        //console.log(localStorage.getItem("ehstoken12345678910"));
+    if(cartflag){
+        if (authUser) {
+            Axios.post(`${API}auth/update_user_cart`, {
+                poster_obj_id: product._id,
+                material_obj_id: finalMatDim,
+                quantity: quantity,
+            },
+                {
+                    headers: { "x-access-token": localStorage.getItem("ehstoken12345678910") },
+                    params: { userId: JSON.parse(localStorage.getItem("userDetails123"))._id }
+                })
+                .then((res) => {
+                    console.log(res);
+                    addToCartConfirmPopup();
+                    window.location.reload(false);
+                    setCartCountN(res.data.data.cart.length);
+                    Axios.get(`${API}posters/getPosterById`, { params: { poster_obj_id: productId } }).then((res) => {
+                        setProduct(res.data.data.posterDetails[0]);
+                        console.log(res);
+                        setRating(res.data.data.posterDetails[0].average_rating);
+                        setRatingTotal(res.data.data.ratingTotalWise);
+                        setTotalNoOfRating(res.data.data.totalNoOfRating);
+                        //console.log(res.data.data.posterDetails[0])
+                        setYouMayLike(res.data.data.youMayAlsoLike);
+                        setSimilarItems(res.data.data.realtedPosters);
+                    }).catch((err) => {
+                        console.log(err)
+                    });
+                }).catch((err) => {
+                    console.log(err);
+                })
+        }
+        else {
+            let ehsCart = [];
+            let mat = {
+                material_title: material,
+                dimension_title: dim,
+                price: price
+            }
+            let finalProduct = {
+                productId: product._id,
+                poster_details: product,
+                materialDimension: mat,
+                quantity: quantity,
+                total: amount
+            }
+            let flag = false;
+            if (localStorage.getItem("ehsCart")) {
+                ehsCart = JSON.parse(localStorage.getItem("ehsCart"));
+                const i = ehsCart.findIndex(product => product.productId === finalProduct.productId)
+                if (i >= 0) {
+                    ehsCart[i] = finalProduct;
+                    flag = true;
+                    addToCartConfirmPopup();
+                    setTimeout(() => {
+                        // window.location.reload(false);
+                    }, 1000);
+                }
+            }
+            if (flag === false) {
+                ehsCart.push(finalProduct)
+                addToCartConfirmPopup();
+                setTimeout(() => {
+                    // window.location.reload(false);
+                }, 1000);
+            }
+            localStorage.setItem("ehsCart", JSON.stringify(ehsCart));
+
+        }
+        setTimeout(() => {
+                    history.push('/cart')
+                }, 1000);
+        
+    }
+}
+
+
+
+
 
 
     const calculateAmount = () => {
@@ -1150,6 +1259,7 @@ const PosterProductPage = (props) => {
                             }}>Add To Cart<FavoriteBorderIcon className="ml-1" style={{ transform: "scale(0.8)" }} /></button>
 
                         <button
+                        onClick={buyNow}
                             style={{
                                 width: '100%',
                                 border: "none",

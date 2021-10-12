@@ -9,7 +9,7 @@ import {API} from "../../../backend";
 const Card = (props) => {
     return(
         <div className="br-22 bestsellerCard d-flex flex-column justify-content-start">
-            <img src={props.imgUrl} className="br-22 bestsellerImg"  />
+            <img src={props.imgUrl} className=" bestsellerImg" style={{borderRadius:'4px'}} />
             <p className="bestsellerText  mb-0 px-2">{props.title}</p>
         </div>
     )
