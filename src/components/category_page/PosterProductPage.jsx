@@ -1551,38 +1551,17 @@ const PosterProductPage = (props) => {
             {catSlug !== 'posters' ?
                 <CarouselWrap>
                     <Slider className="carousel" {...csettings} >
+                        {similarItems.map((item)=>
                         <div className='carousel-items'>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS040zhYmfZvoJY2zABrdT0FuaUUsLGI3ZKIA&usqp=CAU" alt="" />
+                            <img src={item.imgUrl[0]} alt="" />
 
                         </div>
-                        <div className='carousel-items'>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS040zhYmfZvoJY2zABrdT0FuaUUsLGI3ZKIA&usqp=CAU" alt="" />
-
-                        </div>
-                        <div className='carousel-items'>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS040zhYmfZvoJY2zABrdT0FuaUUsLGI3ZKIA&usqp=CAU" alt="" />
-
-                        </div>
-                        <div className='carousel-items'>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS040zhYmfZvoJY2zABrdT0FuaUUsLGI3ZKIA&usqp=CAU" alt="" />
-
-                        </div>
-                        <div className='carousel-items'>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS040zhYmfZvoJY2zABrdT0FuaUUsLGI3ZKIA&usqp=CAU" alt="" />
-
-                        </div>
-                        <div className='carousel-items'>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS040zhYmfZvoJY2zABrdT0FuaUUsLGI3ZKIA&usqp=CAU" alt="" />
-
-                        </div>
-                        <div className='carousel-items'>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS040zhYmfZvoJY2zABrdT0FuaUUsLGI3ZKIA&usqp=CAU" alt="" />
-
-                        </div>
-                        <div className='carousel-items'>
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS040zhYmfZvoJY2zABrdT0FuaUUsLGI3ZKIA&usqp=CAU" alt="" />
-
-                        </div>
+                        
+                       
+                        
+                        
+                        )}
+                        
 
                     </Slider>
 
