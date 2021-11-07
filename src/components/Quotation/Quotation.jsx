@@ -325,6 +325,7 @@ const Quotation = (props) => {
 
   return (
     <>
+    
         <div
             style={{
               width: "660px",
@@ -333,15 +334,13 @@ const Quotation = (props) => {
               borderTopLeftRadius: "15px",
             }}
         className="mx-auto mt-5 d-block "
+        
       >
+   
         <div className="quotation mb-5 p-3 pl-4 " >
-          <Link to="/cart">
-            <HighlightOffIcon
-              style={{ color: "black", position: "absolute", right: "405px",top: "140px" }}
-            />
-          </Link>
+          
 
-          <div style={{}}>
+          <div >
           <Grid.Row
             className="quotation1 mt-1 "
             style={{
@@ -354,8 +353,11 @@ const Quotation = (props) => {
             }}
           >
             PROFORMO INVOICE
+          
           </Grid.Row>
+            
           </div>
+          
 
           <Grid.Row columns="2" className="mt-4 " style={{height: "94%"}}>
             <Grid.Column style={{ width: "10%" }}>
@@ -406,8 +408,15 @@ const Quotation = (props) => {
             </Grid.Row>
           </Grid.Row>
         </div>
+        
       </div>
-
+      <div>
+          <Link to="/cart">
+            <HighlightOffIcon
+              style={{ color: "black", position: "absolute", right: "405px",top: "140px" }}
+            />
+          </Link>
+          </div>
     </>
   );
 };

@@ -15,7 +15,7 @@ import Axios from "axios";
 import { login } from "./helper/apiPath";
 import { setLoginResponse } from "./redux/actions/index.js";
 import { connect } from "react-redux";
-import Login from "./components/login/Login";
+import Login from "./components/login/Login.jsx";
 import Signup from "./components/login/Signup.jsx";
 import Otp from "./components/login/Otp";
 import ForgotPass from "./components/login/ForgotPass";
@@ -27,6 +27,7 @@ import Faq from "./components/Faq/Faq";
 import Quotation from "./components/Quotation/Quotation";
 import TrackOrder from "./components/TrackOrder/TrackOrder";
 import SignageProductPage from "./components/signages/SignageProductPage";
+import SignageProductPageN from "./components/category_page/SignagesProductPageN";
 import Footer from "./components/homepage/FooterNew";
 import PosterProductPage from "./components/category_page/PosterProductPageN";
 import Contact from "./components/contact/Contact";
@@ -160,6 +161,10 @@ function App(props) {
             <Route exact path="/:catSlug/:subCatSlug/product/id=:productId">
               <PosterProductPage  />
             </Route>
+            {/* <Route exact path="/signages/:subCatSlug/product/id=:productId">
+              <SignageProductPageN  />
+            </Route> */}
+
 
             <Route exact path="/author/:authorSlug/products">
               <Author />

@@ -1,5 +1,144 @@
 .promiseCard{
     font-family: "Open Sans";
+    background: #FFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+}
+.inline{
+    display: inline-block;
+}
+.promiseCard2{
+    font-family: 'Source Sans Pro';
+    width: 374px;
+    height: 263px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.promiseHeading{
+    font-style: normal;
+    letter-spacing: 0.2px;
+    height: 57px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 57px;
+    text-align: center;
+    color: #000;
+
+}
+.spacing .descText{
+    background-color: red;
+    word-spacing: 5px;
+}
+.cardContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    margin-top: 16px;
+}
+.titleText{
+    font-style: normal;
+    font-weight: bold;
+    font-family: "Open Sans";
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #000;
+}
+.descText{
+    width: 309px;
+    margin: 0 15px 0 15px;
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000;
+}
+.upperBox{
+    width: 795px;
+}
+/* @media (max-width: 480px){
+    .upperBox{
+        width: 350px;
+    }
+    .promiseHeading{
+        font-size: 16px;
+    }
+    .cardContainer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        margin-top: 6px;
+    }
+    .cardImg{
+        transform: scale(0.8,0.8);
+    }
+    .promiseCard2{
+        width: 162px;
+        height: 113px;
+        
+    }
+    .titleText{
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .descText{
+        width: 140px;
+        font-size: 8px;
+        line-height: 10px;
+    }
+} */
+/* @media (max-width: 480px){
+    .promiseHeading{
+        font-size: 16px;
+    }
+    .cardContainer{
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 44px;
+        margin-top: 6px;
+    }
+    .cardImg{
+        transform: scale(1.1,1.1);
+    }
+    .cardImg2{
+        transform: scale(0.7,0.7);
+    }
+    .promiseCard{
+        width: 300px;
+        height: 187px;
+        margin-bottom: 30px;
+    }
+    .promiseCard2{
+        width: 300px;
+        height: 187px;
+    }
+    .titleText{
+        font-size: 16px;
+        line-height: 47px;
+    }
+    .descText{
+        font-size: 14px;
+        line-height: 18px;
+    }
+} */
+
+
+
+
+/* .promiseCard{
+    font-family: "Open Sans";
     width: 374px;
     height: 263px;
     background: #FFF;
@@ -138,4 +277,4 @@
         font-size: 14px;
         line-height: 18px;
     }
-} */
+} */ 

@@ -1647,6 +1647,11 @@ margin-right: auto;
 margin-bottom: 20px;
 
   }
+  .dimension_image_alignment
+  {
+    height: 100%;
+    width: 100%;
+  }
   .text1{
     font-size: 14px;
 line-height: 17px;
@@ -1690,6 +1695,13 @@ margin-top: 10px;
   border-radius: 6px;
   box-sizing: border-box;
   position: relative;
+  align-items: center;
+}
+.image_alignment{
+  align-items: center;
+}
+.heading_carousel_item{
+text-align: center;
 }
 .posterMaterialDimension>*{
   pointer-events: none;
@@ -1709,9 +1721,10 @@ margin-top: 10px;
 .materialImg2Dimension{
   width: 81px;
   
+  
 }
 .materialTextDimension{
-  font-size: 11px;
+  font-size: 12px;
   line-height: 14px;
   font-weight: 500;
   position: absolute;
@@ -1954,8 +1967,9 @@ line-height: 23px;
     margin-left: 5px;
   }
   .posterDimensionText{
-    font-size: 8px;
+    font-size: 10px;
     line-height: 8px;
+    
   }
 }
 
@@ -2306,7 +2320,7 @@ color: #000000;
 }
 .popupMaterialDimension{
   width: 95px;
-  height: 145px;
+  height: 161px;
   border: 1px solid #D2D2D2;
   box-sizing: border-box;
   border-radius: 6px;
@@ -2327,6 +2341,7 @@ font-size: 14px;
 line-height: 16px;
 text-align: center;
 color: #000000;
+padding: 2px;
 }
 .popupMaterialImg1{
   width: 60px;

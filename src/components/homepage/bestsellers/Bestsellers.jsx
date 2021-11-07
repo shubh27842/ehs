@@ -11,12 +11,14 @@ import {API} from "../../../backend";
 
 const ImgBox = (props) => {
   return (
+ 
     <div className="  imgBox ">
       <img className="  m-0" id="imgBoxImage" src={props.src} alt="poster" />
       <p className=" mt-sm-1 mt-0 mb-0 " id="imgBoxTitle">
         {props.title}
       </p>
     </div>
+  
   );
 };
 
@@ -103,6 +105,8 @@ const Bestsellers = () => {
                 <div className="" style={{background: "#F6F6F6"}}>
                 <Carousel className=" w-100  "  breakPoints={breakPoints}  showArrows={false} ref={bestseller} style={{opacity: "1!important"}} 
                 renderPagination={pagination}>
+
+                  
                     <div className="  active   "  id="carouselItem">
                       {postersBestselller && postersBestselller.slice(0,4).map((val,i) => {
                             return (
@@ -110,6 +114,8 @@ const Bestsellers = () => {
                             );
                         })}
                     </div>
+
+                    
                     <div id="carouselItem" className="">
                       {signagesBestselller && signagesBestselller.slice(0,4).map((val,i) => {
                             return (

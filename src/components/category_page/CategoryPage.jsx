@@ -215,11 +215,16 @@ const CategoryPage = (props) => {
           </>
         ): ""
       }
-      <div className="bestSellerCarouselItem" style={{background: "#F6F6F6"}}>
+       <div style={{
+        borderTop: "6px solid #F6F6F6",
+        margin: "50px 0 20px 0"}}></div>
+      <div className="bestSellerCarouselItem" style={{background: "#FFF"}}>
           <h2 className="promiseHeading1  d-inline-block">Bestsellers</h2>
           <div className="carouselArrow mt-4">
-            <ArrowBackIosRoundedIcon id="prevBtn1"  role="button" className="mr-4 " onClick={() => bestseller.current.slidePrev()} />
-            <ArrowForwardIosRoundedIcon id="prevBtn1" role="button" onClick={() => bestseller.current.slideNext()}  />
+          <ArrowBackIosRoundedIcon onClick={() =>  bestseller.current.slidePrev()} role="button" className=" mt-auto mb-auto mr-4 " id="prevBtn" />
+              <ArrowForwardIosRoundedIcon onClick={() =>  bestseller.current.slideNext()} role="button" className="mt-auto mb-auto " id="nextBtn" />
+            {/* <ArrowBackIosRoundedIcon id="prevBtn1"  role="button" className="mr-4 " onClick={() => bestseller.current.slidePrev()} />
+            <ArrowForwardIosRoundedIcon id="prevBtn1" role="button" onClick={() => bestseller.current.slideNext()}  /> */}
           </div>
           <Carousel className="px-2 px-sm-0" pagination={false}  breakPoints={breakPointsBestseller}  showArrows={false} ref={bestseller} style={{opacity: "1!important"}} 
           >

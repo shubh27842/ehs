@@ -259,7 +259,7 @@ const { register: register2, handleSubmit: handleSubmit2} = useForm({
        setSelectedAddress(address);
       // console.log(e)
        //console.log(address);
-        let add = document.getElementsByClassName("selectAddress");
+        let add = document.getElementsByclassName("selectAddress");
         for(let i=0;i<add.length;i++){
             add[i].style.border = "2px solid #D2D2D2";
         }

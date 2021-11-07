@@ -146,7 +146,7 @@ const ProductList2 = (props) => {
             <img src={Upto50} alt="upto50%" className="ml-auto d-none d-sm-block" style={{width: "640px"}} />
           </div>
       </div>
-
+ 
       <div className="padding-10 subCatHeadCarousel ">
         <div className="d-flex align-items-center   " >
               <ArrowBackIosRoundedIcon id="prevBtn1" onClick={() =>  posterIndividualCatCarousel.current.slidePrev()} role="button" className="border mt-auto mb-auto shadow-sm rounded-circle" />               
