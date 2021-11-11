@@ -991,7 +991,7 @@ const changeDimension = (e) => {
                     */}
                     {catSlug==='posters'?
                     <div className=" mt-0 mt-sm-0 d-flex flex-column coflex-row justify-content-between" >
-                        <p className="mt-sm-0 mb-2  align-self-sm-start align-self-start selectHead  ">Select Maaterial</p>
+                        <p className="mt-sm-0 mb-2  align-self-sm-start align-self-start selectHead  ">Select Material</p>
                         {/* product.materialDimension ? (
                             <div className="d-flex justify-content-between mr-0  ">
                             <div className="posterMaterialDimension selected" id="m1" role="button" onClick={changeMaterialTo1} >
