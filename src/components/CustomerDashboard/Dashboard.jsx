@@ -1106,13 +1106,14 @@ const OrderDetailCard = (props) => {
               props.items && props.items.map((product,i)=>{
                 return(
                   <div className="d-flex flex-sm-row flex-column  justify-content-between">
+                  
                   <div className="productDetails  my-3 d-flex ">
-                    <img src={product.poster_details.imgUrl ? product.poster_details.imgUrl[0] : "" } alt="product" className="myOrderProductImg" />
+                    <img src={product.poster_details ? product.poster_details.imgUrl[0] : "" } alt="product" className="myOrderProductImg" />
                     <div className="ml-sm-3 ml-2  pt-0 prductDetail ">
-                      <p className="myOrderProductName ">{product.poster_details.name}</p>
-                      <p className="myOrderProductDetail ">Material: <span style={{fontWeight: "600"}}>{product.materialDimension.material_title}</span> </p>
-                      <p className="myOrderProductDetail">Dimension: <span style={{fontWeight: "600"}}>{product.materialDimension.dimension_title}</span> </p>
-                      <pre className="myOrderProductDetail">Price: <span style={{fontWeight: "600"}}>₹{product.materialDimension.price}     </span>  Quantity: <span style={{fontWeight: "600"}}>{product.quantity}</span> </pre>
+                      <p className="myOrderProductName ">{product.poster_details ? product.poster_details.name : "-"}</p>
+                      <p className="myOrderProductDetail ">Material: <span style={{fontWeight: "600"}}>{product.materialDimension ? product.materialDimension.material_title : "-"}</span> </p>
+                      <p className="myOrderProductDetail">Dimension: <span style={{fontWeight: "600"}}>{product.materialDimension ? product.materialDimension.dimension_title : "-"}</span> </p>
+                      <pre className="myOrderProductDetail">Price: <span style={{fontWeight: "600"}}>₹{product.materialDimension ? product.materialDimension.price : "-"}     </span>  Quantity: <span style={{fontWeight: "600"}}>{product.quantity}</span> </pre>
                       <p className="myOrderProductDetail">Seller: <span style={{fontWeight: "600"}}>Dichroic Lab</span></p>
                       <p className="myOrderProductDetail " style={{color: "#F2994A",cursor: "pointer"}} onClick={()=>addRating(product.poster_details._id)}>Review Product</p>
                       <div 
@@ -1127,7 +1128,7 @@ const OrderDetailCard = (props) => {
                         color: "#2D9CDB",
                       }}>View Tracking Status</div>
                     </div>
-                  </div>
+                  </div> 
                   <div 
                     onClick={()=>trackingStatus(product)}
                     className="mb-3 align-self-center align-self-sm-start my-sm-3 d-none d-sm-block" 
