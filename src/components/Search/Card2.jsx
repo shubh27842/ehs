@@ -207,7 +207,7 @@ const Card2 = (props) => {
                 style={{ float: "left", cursor: "pointer" }}
                 className="card2AddStock"
               >
-                Add to Cart
+                
               </p>
               <p
                 className="card2Bought"

@@ -5,6 +5,8 @@ import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 import Axios from "axios";
 import {API} from "../../../backend";
+import {Link} from "react-router-dom"
+import './bestsellersNew.css'
 
 const Card = (props) => {
     return(
@@ -15,7 +17,7 @@ const Card = (props) => {
     )
 };
 
-const  BestsellersNew = () =>  {
+const  BestsellersNew = (props) =>  {
 
     const [category,setCategory] = useState('posters');
   const [postersBestselller,setPostersBestseller] = useState([]);
@@ -60,8 +62,8 @@ const  BestsellersNew = () =>  {
                     {
                         postersBestselller.length>0 &&  postersBestselller.slice(0,4).map((val,i)=>{
                             return(
-                                <Card title={val.name ? val.name : "-"} imgUrl={val.imgUrl.length>0 ? val.imgUrl[0] : ""} ></Card>
-                            )
+                                <Link to ={`/${val.category[0].cat_slug}/${val.subCategory[0].sub_cat_slug}/product/id=${val._id}`}> <Card title={val.name ? val.name : "-"} imgUrl={val.imgUrl.length>0 ? val.imgUrl[0] : ""} ></Card></Link>
+                             )
                         })
                     }
                 </div> 
@@ -73,7 +75,7 @@ const  BestsellersNew = () =>  {
                     {
                         signagesBestselller.length>0  && signagesBestselller.slice(0,4).map((val,i)=>{
                             return(
-                                <Card title={val.name ? val.name : "-"} imgUrl={val.imgUrl.length>0 ? val.imgUrl[0] : ""} />
+                                <Link to ={`/${val.category[0].cat_slug}/${val.subCategory[0].sub_cat_slug}/product/id=${val._id}`}> <Card title={val.name ? val.name : "-"} imgUrl={val.imgUrl.length>0 ? val.imgUrl[0] : ""} /></Link>
                             )
                         }) 
                     }
@@ -86,7 +88,7 @@ const  BestsellersNew = () =>  {
                     {
                         floorgraphicsBestselller && floorgraphicsBestselller.slice(0,4).map((val,i)=>{
                             return(
-                                <Card title={val.name ? val.name : "-"} imgUrl={val.imgUrl.length>0 ? val.imgUrl[0] : ""} />
+                              <Link  to="">  <Card title={val.name ? val.name : "-"} imgUrl={val.imgUrl.length>0 ? val.imgUrl[0] : ""} /></Link>
                             )
                         })
                     }
@@ -99,7 +101,7 @@ const  BestsellersNew = () =>  {
                     {
                         assetmarkingsBestselller && assetmarkingsBestselller.slice(0,4).map((val,i)=>{
                             return(
-                                <Card title={val.name ? val.name : "-"} imgUrl={val.imgUrl.length>0 ? val.imgUrl[0] : ""} />
+                               <Link  to=""> <Card title={val.name ? val.name : "-"} imgUrl={val.imgUrl.length>0 ? val.imgUrl[0] : ""} /></Link>
                             )
                         })
                     }

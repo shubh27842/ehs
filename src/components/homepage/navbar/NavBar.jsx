@@ -436,7 +436,7 @@ const NavBar = (props) => {
             </div>
        </div>
       </nav>
-
+ 
 
       <nav className="navbar navbar-expand-sm mt-0  pt-0 pb-0 pb-sm-2 " id="navbarContainer">
         <div className="collapse navbar-collapse animate__animated animate__faster  " id="navbarNav">
@@ -470,7 +470,7 @@ const NavBar = (props) => {
                     )
                   })}
                 
-                  
+                   
                 </div>
               </div>
             </li>
@@ -634,7 +634,10 @@ const NavBar = (props) => {
                 Resources
               </Link>
             </li>
-            <div className='d-flex '>
+
+                  {/* --------------------about and contact removed-------------- */}
+
+            {/* <div className='d-flex '>
             <li className="nav-item mb-0 mr-3">
               <Link
                 to="/about"
@@ -653,7 +656,7 @@ const NavBar = (props) => {
                 Contact
               </Link>
               </li>
-            </div>
+            </div> */}
            
             <div className="nav-item mt-auto d-block d-sm-none" >
             <li

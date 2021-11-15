@@ -61,7 +61,7 @@ const Footer = (props) => {
               </div>
               <div className="d-flex align-items-center mt-3 ">
                   <h3 className="footerhead  my-0">Know More: </h3>
-                  <div className="d-flex ml-5 mr-auto justify-content-between " style={{color: "#FFF", width: "25%",paddingLeft: "19px"}}>
+                  <div className="d-flex ml-5  mr-auto mt-auto justify-content-between " style={{color: "#FFF", width: "25%",paddingLeft: "19px"}}>
                   <Link to="/about" className="footertxt">
                   About Us
                 </Link>|

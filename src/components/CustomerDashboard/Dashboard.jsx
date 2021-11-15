@@ -1355,17 +1355,22 @@ const Orders = () => {
   return (
     <>
       <hr style={{borderTop: "4px solid #F6F6F6",marginTop: "0"}}></hr>
+    
       <div className="padding-10">
         <h2 style={{
           fontWeight: "600",
           fontSize: "24px",
           lineHeight: "30px",
           color: "#000000",
+          textDecoration: "none"
         }}>My Orders</h2>
+       
       </div>
+      
       {
         orderData ? orderData.map((order,i)=>{
-          //console.log(orderData)
+          // console.log(orderData)
+          // return;
           return(
             <>
             <OrderDetailCard 
@@ -1930,14 +1935,14 @@ export default function Dashboard(props) {
               <div
                 onClick={setRedirectFun}
                 id="two"
-                className="listanchor"
+                className="listanchor "
                 style={redirect.two ? { background: "rgba(86, 204, 242, 0.2)",
                                         border: "2px solid #2D9CDB",
                                         boxSizing: "border-box",
                                         borderRadius: "32px",
-                                        color: "#2D9CDB"} : null}
+                                        color: "#2D9CDB" } : null}
               >
-                MY ORDERS
+                My Orders
               </div>
               <div
                 onClick={setRedirectFun}

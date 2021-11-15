@@ -8,6 +8,7 @@
     width: 240px;
     height: 348px;
     border: none;
+    
 }
 .promoCardImg{
         width: 240px;
@@ -15,6 +16,7 @@
 }
 .cardBody{
     height: 89px;
+   
 }
 .cardTitle{
     font-family: "Open Sans";
@@ -32,6 +34,7 @@
     text-align: left;
     color: #000;
 }
+
 @media (max-width: 480px){
     .cardTitle{
         width: 152px;

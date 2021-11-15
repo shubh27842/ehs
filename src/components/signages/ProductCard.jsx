@@ -306,7 +306,7 @@ const ProductCard = (props) =>{
 
 const MaterialSelectNew = (e)=> {
     setMaterial(e.target.innerText);
-    // const m = document.getElementsByClassName("mat");
+    // const m = document.getElementsByclassName("mat");
     // for(let i=0;i<m.length;i++){
     //     // console.log(m[i])
     //     m[i].classList.remove("selected")

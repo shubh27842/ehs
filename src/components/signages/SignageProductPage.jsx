@@ -357,7 +357,7 @@ const SignageProductPage = () => {
                             color: "#757575",
                             lineHeight: "45px",  
                             color: "#003459",
-                        }}>&#8377;{amount}</p>
+                        }}>&#8377;{amount} </p>
                         <span className="ml-5" style={{
                             fontFamily: "Source Sans Pro",
                             fontStyle: "normal",
@@ -380,7 +380,7 @@ const SignageProductPage = () => {
                         borderTop: "6px solid #F6F6F6",
                         margin: "30px 0px"
                     }}></div>
-            
+             
 
             <div className="row padding-10">
                     <div className="col-4  d-none d-sm-block">

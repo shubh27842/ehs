@@ -427,7 +427,7 @@ const PosterProductPage = (props) => {
         let flag = true;
         console.log(product)
         product.materialDimension.map((val, i) => {
-            if (dim === val.dimension_title && material === val.material_title) {
+            if ((catSlug==="signages")?(dim === val.dimension_title):( dim === val.dimension_title && material === val.material_title)) {
                 setAmount(val.price * quantity);
                 setPrice(val.price);
                 if (product.discountValue > 0) {
@@ -991,7 +991,7 @@ const changeDimension = (e) => {
                     */}
                     {catSlug==='posters'?
                     <div className=" mt-0 mt-sm-0 d-flex flex-column coflex-row justify-content-between" >
-                        <p className="mt-sm-0 mb-2  align-self-sm-start align-self-start selectHead  ">Select Maaterial</p>
+                        <p className="mt-sm-0 mb-2  align-self-sm-start align-self-start selectHead  ">Select Material</p>
                         {/* product.materialDimension ? (
                             <div className="d-flex justify-content-between mr-0  ">
                             <div className="posterMaterialDimension selected" id="m1" role="button" onClick={changeMaterialTo1} >
@@ -1015,7 +1015,11 @@ const changeDimension = (e) => {
                                     <div className="posterMaterialDimension  mat mr-1"  role="button" onClick={(e)=>changeMaterial(e)} style={{
                                         minHeight: '160px'
                                     }} >
-                                        <img src={val.material_img? val.material_img: ""} className="materialImg2Dimension " alt="material"></img>
+                                        <div clasname="dimension_image_alignment" >
+                                        <img src={val.material_img? val.material_img: ""} className="materialImg2Dimension " alt="material" style={{
+                                                marginLeft:5,
+                                            }} ></img>
+                                        </div>
                                         <p className="text-center materialTextDimension  mt-auto " style={{
                                            
 
@@ -1052,9 +1056,11 @@ const changeDimension = (e) => {
                                             alignItems:'center',
                                             marginLeft:3,
                                         }}>
+                                             <div clasname="dimension_image_alignment" >
                                             <img src={val.dimension_img? val.dimension_img: ""} className="posterDimension2 mt-2 " alt="dimension" style={{
                                                 marginLeft:0,
                                             }}></img>
+                                            </div>
                                             <p className="text-center posterDimensionText  " style={{
                                                 
                                                 textOverflow:"ellipsis",

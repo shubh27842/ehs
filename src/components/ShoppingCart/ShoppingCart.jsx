@@ -43,6 +43,7 @@ const Tables = (props) => {
   const [coupon,setCoupon] = useState();
   const [discount,setDiscount] = useState(0.00);
   const [couponError,setCouponError] = useState('');
+  const [couponMessage,setCouponMessage] = useState('');
   const [amountAfterCoupon,setAmountAfterCoupon] = useState(totalAmount);
   const [couponDetails,setCouponDetails] = useContext(CouponInfo);
   
@@ -330,6 +331,7 @@ const Tables = (props) => {
           dis1=disValue;
           price=totalAmount-disValue;
           setAmountAfterCoupon(totalAmount-disValue);
+          setCouponMessage("Coupon Applied !!!")
 
         }else{
           let dis = parseFloat((totalAmount*disValue)/100);
@@ -337,6 +339,7 @@ const Tables = (props) => {
           setAmountAfterCoupon(totalAmount-dis);
           dis1=dis;
           price=totalAmount-dis;
+          setCouponMessage("Coupon Applied !!!")
         }
         setCouponDetails(couponDetails=>({
           ...couponDetails,
@@ -348,6 +351,7 @@ const Tables = (props) => {
         }))
       }else{
         setCouponError("Invalid Coupon Code!!!")
+        setCouponMessage("")
       }
     
 
