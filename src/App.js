@@ -15,8 +15,8 @@ import Axios from "axios";
 import { login } from "./helper/apiPath";
 import { setLoginResponse } from "./redux/actions/index.js";
 import { connect } from "react-redux";
-import Login from "./components/login/Login.jsx";
-import Signup from "./components/login/Signup.jsx";
+import Login from "./components/login/LoginN";
+import Signup from "./components/login/SignupN.jsx";
 import Otp from "./components/login/Otp";
 import ForgotPass from "./components/login/ForgotPass";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
@@ -38,6 +38,7 @@ import Author from "./components/Author/ProductsByAuthor";
 import CouponInfo from "./helper/couponInfo";
 import CartContext from "./helper/cartContext";
 import Success from "./components/SuccessPage/SuccessPage";
+import DiyHome from "./components/DIY/Components/DiyHome/DiyHome";
 
 const  ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -77,6 +78,7 @@ function App(props) {
   };
 
   const [Description, setDescription] = useState({});
+  const [textFieldData, setTextFieldData] = useState({});
 
   React.useEffect(() => {
     document.title = "Ehs prints";
@@ -94,12 +96,13 @@ function App(props) {
 
   return (
     <div className="App">
-      <DesContext.Provider value={{ DesDetail: setDescription }}>
+      <DesContext.Provider value={{ DesDetail: setDescription },[textFieldData, setTextFieldData]}>
       <CouponInfo.Provider value={[couponDetails,setCouponDetails]}>
       <CartContext.Provider value={[cartCountN, setCartCountN]}>
         <Router >
         <ScrollToTop />
           <NavBar
+          
           />
           
           <Switch>
@@ -110,6 +113,12 @@ function App(props) {
             <Route exact path="/about">
               <About />
             </Route>
+
+            
+            <Route exact path="/DIY">
+              <DiyHome />
+            </Route>
+            
 
             <Route exact path="/track">
               <TrackOrder />
@@ -221,7 +230,8 @@ function App(props) {
             </Route>
           </Switch>
 
-          <Footer />
+          <Footer 
+            className="footer_z_index" />
         </Router>
         </CartContext.Provider>
         </CouponInfo.Provider>

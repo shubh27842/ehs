@@ -98,8 +98,10 @@ const Signup = (props) => {
 
   return (
     <>
-        <div className="loginPage p-1 pt-5 pb-5 p-sm-3 mx-auto mt-5 mt-sm-4 mb-5 mb-sm-4 d-block">
-        <div className="d-flex justify-content-center align-items-center">
+        <div className="loginPage p-2 mx-auto m-4 text-center">
+        
+        {/* Logo */}
+        <div className="justify-content-center align-items-center">
           <AccountBoxIcon id="accountIcon" />
           <img
             className=" d-inline-block"
@@ -108,9 +110,37 @@ const Signup = (props) => {
             alt="Ehs Logo"
           />
         </div>
+
+        <div className="social_login my-4 text-center">
+
+          {/* -----------Google login------------- */}
+          <div className="Google_login text-center my-2">
+            <button style={{backgroundColor:"white", }} className="p-1 widthControl">
+              <img src ="https://play-lh.googleusercontent.com/6UgEjh8Xuts4nwdWzTnWH8QtLuHqRMUB7dp24JYVE2xcYzq4HA8hFfcAbU-R-PC_9uA1" className="image-fluid inline align-middle px-1" width="44" height="auto"/>
+              <p style={{marginBottom:"0",}} className="inline align-middle px-2 h6">Signup with Google</p>
+            </button>
+          </div>
+
+          {/* -----------Facebook login button------------- */}
+            <div className="Google_login text-center my-3">
+              <button style={{backgroundColor:"#3b5998", borderColor:"#3b5998",}} className="p-2 widthControl">
+                <img src ="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" className="image-fluid inline align-middle px-1" width="35" height="auto"/>
+                <p style={{marginBottom:"0", color:"white"}} className="inline align-middle px-2 h6">Signup with Facebook</p>
+              </button>
+            </div>
+
+        </div>
+
+        {/* OR */}
+        <div className="text-center my-2" style={{position:"relative", zIndex:"+1"}}>
+          <p className="inline px-4 h4" style={{ backgroundColor:"white", color:"grey"}}>OR</p>
+        </div>
+        <hr className="divhr"/>
+
+        <p className="text-center h4" style={{marginTop: "-20px", fontWeight:"600"}}>Create an account</p>
+        {/* Input form */}
         <form onSubmit={handleSubmit(onSubmit)} >
             <input 
-            className="mx-auto d-block mt-3 " 
             id="loginUserEmail" 
             type="text" 
             placeholder="Name" 
@@ -120,12 +150,13 @@ const Signup = (props) => {
             })}
             />
              {errors.name && (<span className="text-danger ml-4 d-block errorMsg">{errors.name.message}</span>)}
-            <div className="mt-3" style={{position: "relative"}}>
+            
+            <div className="my-3" style={{position: "relative"}}>
               <input 
-                className="mx-auto d-block " 
+                className="mx-auto inlineTemp width mx-2" 
                 id="loginUserEmail"  
                 type="text" 
-                placeholder="Email or Phone Number"
+                placeholder="Email / Phone Number"
                 name="emailid"
                 {...register('emailid',{
                   required: "**this field is required",
@@ -135,22 +166,19 @@ const Signup = (props) => {
                   }
                 })}
               />
-              {errors.emailid && (<span className="text-danger ml-4 d-block  mt-0 errorMsg">{errors.emailid.message}</span>)}
-              <span className="resendOTP otpBox otpBoxHide " role="button" id="sendOtpBtn"  style={{
-                fontFamily: "Lato",
-                fontStyle: "normal",
-                fontWeight: "normal",
-                fontSize: "16px",
-                lineHeight: "19px",
-                color: "#40CEFC",
-              }}
+              
+              <span className="resendOTP otpBox otpBoxHide btn mx-2" id="sendOtpBtn"
               onClick={sendOtp}
               >Send OTP</span>
+
+          {errors.emailid && (<span className="text-danger ml-4 d-block errorMsg">{errors.emailid.message}</span>)}
             </div>
-            <p id="otpNote" className="note ">We will send you a verification link at your Email address or Mobile Number. Kindly click to verify your account. </p>
+
+            <p id="otpNote" className="note">We will send you a verification link at your Email address or Mobile Number. Kindly click to verify your account. </p>
+            
             <div className=" mt-3" style={{position: "relative"}}>
                <input
-                className=" mx-auto d-block  "
+                className="mx-auto inlineTemp width mx-2 "
                 id="loginUserEmail"
                 type="number"
                 placeholder="OTP"
@@ -159,17 +187,13 @@ const Signup = (props) => {
                 required: "**this field is required",
               })}
               />
-              {errors.otp && (<span className="text-danger ml-4 d-block  mt-0 errorMsg">{errors.otp.message}</span>)}
-              <span className="resendOTP otpBox  " role="button" id="verifyOtp" style={{
-                fontFamily: "Lato",
-                fontStyle: "normal",
-                fontWeight: "normal",
-                fontSize: "16px",
-                lineHeight: "19px",
-                color: "#40CEFC",
-              }}
+
+             
+              <span className="resendOTP otpBox btn mx-2" role="button" id="verifyOtp" 
               onClick={verifyOtp}
               >Verify OTP</span>
+
+            {errors.otp && (<span className="text-danger ml-4 d-block  mt-0 errorMsg">{errors.otp.message}</span>)}
                </div>
             <input
               className="mx-auto d-block mt-3"
@@ -183,11 +207,11 @@ const Signup = (props) => {
               })}
             />
             {errors.password && (<span className="text-danger ml-4 d-block mt-0 errorMsg">{errors.password.message}</span>)}
-            <p className="note ">The password should be at least 8 characters long. Add numbers and symbols to make it stronger. </p>
+            <p className="note my-1">The password should be at least 8 characters long. Add numbers and symbols to make it stronger. </p>
             
                <input 
                   type="checkbox"
-                  className="ml-3"
+                  className="text-center mt-4"
                   name="agreeTermsAndConditions"
                   {...register("agreeTermsAndConditions",{
                     required: "**Agree all terms and conditions"
@@ -198,7 +222,7 @@ const Signup = (props) => {
 
             <button
               id="loginBtn"
-              className="mt-4 mx-auto d-block"
+              className="mt-1 mx-auto d-block"
               type="submit"
             >
               Register
@@ -206,37 +230,14 @@ const Signup = (props) => {
               <Link className="d-block registerAs mt-2 mx-auto" to="/login" >
               To register as a Distributor or Designer, click here.
               </Link>
-              <p className="mt-4" style={{
-                fontFamily: "Lato",
-                fontStyle: "normal",
-                fontWeight: "normal",
-                fontSize: "16px",
-                lineHeight: "19px",
-                textAlign: "center",
-                color: "#000000"
-              }}>Already have an account?</p>
-
-
-              <div className="social_login">
-
-              {/* ----------google Login-------------------- */}
-
-        <GoogleLogin
-        buttonText="Continue with Google"
-        />
-         {/* ----------facebook Login-------------------- */}
-
-        <FacebookLogin
-         buttonText="Continue with Facebook"/>
-
-        </div>
-            <Link
-              className="d-block mt-3 mx-auto "
-              to="/login"
-              style={{textDecorationLine: "none"}}
-            >
-              <button id="signupBtn" className="mx-auto d-block" >Log In</button>
-            </Link>
+              <Link>
+                <p className="mt-2 text-center" style={{
+                  fontFamily: "Lato",
+                  fontSize: "16px",
+                  color: "#000000"
+                }}>Already have an account?</p>
+              </Link>
+      
           </form>
         </div>
       

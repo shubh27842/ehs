@@ -15,11 +15,19 @@ import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import MenuIcon from '@material-ui/icons/Menu';
 import { Person, PersonOutline } from "@material-ui/icons";
 
+
+
+
 const NavBar = (props) => {
   const [authUser, setAuthUser] = React.useState("");
   const [find, setFind] = React.useState("");
   const [categories,setCategories] = useState([{sub_category: [],title: ""},{sub_category: [],title: ""},{sub_category: [],title: ""},{sub_category: [],title: ""}]);
   const [cart,setCart] = useState([])
+
+  const [textFieldData, setTextFieldData] = useState({});
+
+  const [posts, setPosts] = useState([]);
+  const [searchTitle, setSearchTitle] = useState("");
 
   useEffect(() => {
     Axios.get(`${API}category/getCategoryById`).then((res)=>{
@@ -60,6 +68,14 @@ const NavBar = (props) => {
     }
       
   }, [props.loginResponse]);
+
+  useEffect(() => {
+  const loadPosts = async()=>{
+    const response = await Axios.get("LINK")
+    setPosts(response.data);
+  }
+  loadPosts();
+  }, [])
 
   
   const [searchCat, setCat] = useState("All Categories");
@@ -239,7 +255,7 @@ const NavBar = (props) => {
       
   };
   return (
-    <div >
+    <div className="navbar_z_index">
         <div className="d-sm-none d-block" style={{width: "100%", height: "58px"}}></div>
         <nav className="container-fluid  navbar navbar-expand-sm navbar-dark d-flex "  id="navBarTop"> 
           <div className="d-block d-sm-none p-0 border-none hamburger " onClick={hamburger} >
@@ -339,7 +355,7 @@ const NavBar = (props) => {
               type="text"
               className="form-control bg-white shadow-none searchBarInput"
               placeholder="Search for posters, signages and more"
-              onChange={(e) => setFind(e.target.value)}
+              onChange={(e) => setSearchTitle(e.target.value)}
             />
          
           </div>
@@ -625,7 +641,7 @@ const NavBar = (props) => {
               </div>
             </li>
             <li className="nav-item mb-0 ">
-              <Link className="nav-link text-white textColorAndWeight menuRemove" onClick={hamburger} to="/#">
+              <Link className="nav-link text-white textColorAndWeight menuRemove" onClick={hamburger} to="/DIY">
                 Create your own
               </Link>
             </li>

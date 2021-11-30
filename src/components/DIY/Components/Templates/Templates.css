@@ -1,0 +1,23 @@
+/* -----------------------image-template------------- */
+.image-template{
+    width: 151px;
+    height: 137px;
+    background: #fff;
+    border-radius: 15px;
+    /* overflow: scroll; */
+    margin: 5px 5px 22px 5px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-map-container{
+    overflow: auto;
+    height: 500px;
+    width: auto;
+    padding: 0px 12px 12px 15px;
+  }
+  /* width */
+  .image-map-container::-webkit-scrollbar {
+    width: 10px;
+  }

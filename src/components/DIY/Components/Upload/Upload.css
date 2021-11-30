@@ -1,0 +1,16 @@
+.upload-logo-container-body{
+    /* margin-left: 20px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 350px;
+}
+.upload-logo-container-body  p{
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 0.09em;
+    line-height: 31px;
+    text-align: left;
+    color: #fff;
+    }

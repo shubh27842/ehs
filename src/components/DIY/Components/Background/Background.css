@@ -1,0 +1,35 @@
+.color-picker-container{
+    margin: 20px 0 0 20px;
+}
+.color-pic{
+    position: absolute;
+    z-index: 100;
+}
+.color-picker-btn{
+    width: 47px;
+    height: 47px;
+    background: #fff;
+    border: 2px solid #56ccf2;
+    border-radius: 5px;
+}
+.background-hr{
+    color: #fff;
+    opacity: 1.25;
+    width: 330px;
+    margin: 35px 0 35px 20px;
+}
+.background-upload{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+.background-upload p{
+    font-weight: normal;
+    font-size: 20px;
+    letter-spacing: 0.09em;
+    line-height: 31px;
+    text-align: left;
+    color: #fff;
+}

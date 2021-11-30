@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import "./Login.css";
+import ReactDOM from 'react-dom';
 import EhsLogo from "../../images/EhsLogo2.png";
 import { setLoginResponse } from "../../redux/actions/index.js";
 import { Link } from "react-router-dom";
@@ -14,9 +15,16 @@ import Swal from "sweetalert2";
 import Spinner from "react-loading";
 import withReactContent from 'sweetalert2-react-content';
 import ErrorIcon from '@material-ui/icons/Error';
-import GoogleLogin from 'react-google-login'
-import FacebookLogin from 'react-facebook-login'
+import { GoogleLogin } from 'react-google-login';
+import { facebookProvider, googleProvider } from "../../firebase/authMethods";
+import socialMediaAuth from "../../firebase/authService/auth";
+
+// import {SocialIcon} from 'react-social-icons';
+
+
+
 const MySwal = withReactContent(Swal);
+
 
 
 const Login = (props) => {
@@ -73,6 +81,11 @@ const Login = (props) => {
      // $("#loginErrorMsg").text(d);
     }
   }
+  const handleAuthOnClick = async (provider)=>{
+    const res = await socialMediaAuth(provider);
+    console.log(res)
+    
+}
 
   function loginReq(loginbody) {
     Axios.post(`${API}auth/login`, loginbody)
@@ -132,38 +145,72 @@ const Login = (props) => {
     //console.log(loginbody);
   }
 
+
+
+  // -------------------------------------- social login with firebase-----------------------------------
+  
+
   return (
     <>
-      <div className="loginPage p-1 pt-5 pb-5  p-sm-3 mx-auto mt-5 mt-sm-4 mb-5 mb-sm-4 d-block">
-        <div className="d-flex justify-content-center align-items-center mb-4 mb-sm-3">
-          <AccountBoxIcon id="accountIcon" />
+      <div className="loginPage text-center mx-auto py-2 my-4">
+        <div className="text-center align-items-center my-2">
+          <AccountBoxIcon id="accountIcon" className="px-1"/>
           <img
-            className=" d-inline-block"
+            className=" d-inline-block px-2"
             id="ehsLogoImg"
             src={EhsLogo}
             alt="Ehs Logo"
           />
         </div>
-        <div className="social_login">
-        
-        {/* ----------google Login-------------------- */}
+        <div className="social_login my-4 text-center">
 
-        <GoogleLogin
-        buttonText="Continue with Google"
-        />
-         {/* ----------facebook Login-------------------- */}
+          {/* -----------Google login------------- */}
+          {/* <GoogleLogin
+                    clientId="Your google client id"
+                    buttonText="Login with google"
+                    // onSuccess={responseGoogle}
+                    // cookiePolicy={'single_host_origin'}
+                    className="Google_login  widthControl "
+                />
+                
+                <FacebookLogin
+                appId="Your facebook app id"
+                // autoLoad={false}
+                // fields="name,email,picture"
+                // callback={responseFacebook} 
+                /> */}
+          <div className="Google_login text-center my-2">
+            <button style={{backgroundColor:"white", }} className="p-1 widthControl"  onClick={()=>handleAuthOnClick(googleProvider)} >
+              <img src ="https://play-lh.googleusercontent.com/6UgEjh8Xuts4nwdWzTnWH8QtLuHqRMUB7dp24JYVE2xcYzq4HA8hFfcAbU-R-PC_9uA1" className="image-fluid inline align-middle px-1" width="44" height="auto"/>
+              <p style={{marginBottom:"0",}} className="inline align-middle px-2 h6">Continue with Google</p>
+            </button>
+          </div>
 
-        <FacebookLogin
-         buttonText="Continue with Facebook"/>
+          {/* -----------Facebook login button------------- */}
+            <div className="Google_login text-center my-3">
+              <button style={{backgroundColor:"#3b5998", borderColor:"#3b5998",}} className="p-2 widthControl"  onClick={()=>handleAuthOnClick(facebookProvider)} >
+                <img src ="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" className="image-fluid inline align-middle px-1" width="35" height="auto"/>
+                <p style={{marginBottom:"0", color:"white"}} className="inline align-middle px-2 h6">Continue with Facebook</p>
+              </button>
+            </div>
 
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+        {/* OR */}
+        <div className="text-center my-2" style={{position:"relative", zIndex:"+1"}}>
+          <p className="inline px-4 h4" style={{ backgroundColor:"white", color:"grey",}}>OR</p>
+        </div>
+        <hr className="divhr"/>
+
+
+        {/* input form */}
+        <form onSubmit={handleSubmit(onSubmit)} className="negMargin">
           <input 
-            className="mx-auto d-block mt-3 " 
+            type="text"
+            className="mx-auto my-1 inputForm" 
             id="loginUserEmail"  
             placeholder="Email Address / Mobile Number" 
-            name="emailid"
+            name="emailid" 
             {...register("emailid",{
               required: "**this field is required",
               pattern: {
@@ -172,57 +219,53 @@ const Login = (props) => {
                   }
             })}
             />
-            {errors.emailid && (<span className="text-danger ml-4 d-block mt-0 errorMsg">{errors.emailid.message}</span>)}
-          <input
-            className="mx-auto d-block mt-2 "
-            id="loginUserPass"
-            type="password"
-            placeholder="Password"
-            name="password"
-            {...register("password",{
-              required: "**this field is required",
-              minLength: {
-                value: 8,
-                message: "Password must be atleast 8 characters long..."
-              }
-            })}
-          />
-          {errors.password && (<span className="text-danger ml-4 d-block mt-0 errorMsg">{errors.password.message}</span>)}
-          
-          <div className="keepSignedIn ml-3 mt-1 d-inline-block">
-            <input 
-            type="checkbox"
-            name="SignedIn"
-            {...register("SignedIn")}
-              />
-            <span className="ml-1">Keep me Signed In</span>
+            {errors.emailid && (<span className="text-danger d-block errorMsg">{errors.emailid.message}</span>)}
+            <input
+              className="mx-auto my-1 p-2 inputForm"
+              id="loginUserPass"
+              type="password"
+              placeholder="Password"
+              name="password"
+              {...register("password",{
+                required: "**this field is required",
+                minLength: {
+                  value: 8,
+                  message: "Password must be atleast 8 characters long..."
+                }
+              })}
+            />
+            {errors.password && (<span className="text-danger ml-4 d-block mt-0 errorMsg">{errors.password.message}</span>)}
+            
+            {/* Keep me sign in */}
+            <div className="text-center align-middle">
+              <div className="keepSignedIn align-middle inline mx-2">
+                <input 
+                type="checkbox"
+                className="align-middle"
+                name="SignedIn"
+                {...register("SignedIn")}
+                  />
+                <span className="ml-1">Keep me Signed In</span>
+              </div>
+                
+              {/* Forgot password */}
+              <Link to="/forgotpassword" className="inline mx-2 align-middle">
+              <p className="forgotPassword align-middle">Forgot Password?</p>
+              </Link>
+              <span className="text-danger d-block mb-2 mt-0 errorMsg" id="loginErrorMsg"></span>
+            </div>
+
+            {/* Login */}
+          <div className="mt-4 mb-2">
+            <button id="loginBtn" type="submit" >
+              Log In
+            </button>
           </div>
+        </form>
 
-          
-        
-        
-        <Link to="/forgotpassword">
-        <p className="d-inline-block forgotPassword float-right mr-3 mt-1">Forgot Password?</p>
-        </Link>
-        <span className="text-danger d-block mb-2 ml-4 mt-0 errorMsg" id="loginErrorMsg"></span>
+        <p className="or">or</p>
 
-        <div className="pt-0  " style={{ marginLeft: "13px", }}>
-          <button
-            id="loginBtn"
-            className="mt-0"
-            type="submit"
-          >
-            Log In
-          </button>
-        </div>
-      </form>
-          <p className="or  m-0 p-0">or</p>
-
-        <Link
-          className="mt-1 d-block"
-          style={{ marginLeft: "13px" }}
-          to="/signup"
-        >
+        <Link className="" to="/signup">
           <button id="signupBtn">Create an account</button>
         </Link>
       </div>

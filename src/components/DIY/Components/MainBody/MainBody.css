@@ -1,0 +1,135 @@
+.mainBody-container{
+    width: 380px;
+    height: 430px;
+    display: flex;
+    justify-content: center;
+}
+.main-caution{
+    width: 261px;
+    height: 374px;
+    border-radius: 14px;
+    background: #fff;
+    border: 4px solid #000;
+    
+}
+.templates-header-one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 481px;
+    height: 82px;
+    border-radius: 8px 8px 0px 0px;
+    border-bottom: 5px solid #000;
+
+}
+.caution-bg-color{
+    background: #FFD72E;
+}
+.danger-bg-color{
+    background: #ff0205;
+}
+.small-notice-bg-color{
+    background: #00fcff;
+    font-style: italic;
+}
+.big-notice-bg-color{
+    background: #00fcff;
+}
+.warning-bg-color{
+    background: #ff8005;
+}
+.templates-header-bold{
+    font-weight: 700; 
+    font-size: 68px !important;
+}
+.header-icon{
+    padding: 5px 10px 0 0;
+}
+.header-icon-two{
+    padding: 0px 10px 0 0; 
+}
+.header-icon-two-warning{
+    padding: 0px 5px 0 0; 
+}
+.templates-header-h1{
+    color: #fff;
+    font-size: 59px;
+    margin-bottom: 0 !important;
+    text-transform: uppercase;
+}
+.templates-second-header-h1{
+    font-weight: bold;
+    font-size: 41px;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 0 !important;
+    text-transform: uppercase;
+}
+.templates-body{
+    height: 180px;
+    border-bottom: 4px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.templates-body img{
+    width: 160px;
+}
+.templates-footer{
+    height: 106px;
+    width: 253px;
+    border-radius: 0px 0px 8px 8px;
+}
+.templates-footer h4{
+    line-height: 30px;
+}
+
+/* -----------------------main-caution-second------------- */
+.main-caution-second{
+   width: 491px;
+    height: 343px;
+    border-radius: 14px;
+    background: #fff;
+    border: 5px solid #000;
+}
+.second-templates-body{
+    width: 200px;
+    height: 252px;
+    border-right: 5px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.second-templates{
+    border-radius: 0px 0px 8px 8px;
+}
+.second-templates-body img{
+    width: 150px;
+}
+.templates-header{
+    width: 253px;
+    height: 80px;
+    border-radius: 8px 8px 0px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid #000;
+
+}
+.pictograms-cancel-icon{
+    visibility: hidden;
+     width: 20px;
+     cursor: pointer;
+     position: absolute;
+ }
+ .pictograms-img:hover .pictograms-cancel-icon{
+    visibility: visible;
+ }
+ .pictograms-img{
+     cursor: all-scroll;
+ }
+ .editable-text-cancel{
+     position: absolute;
+     margin: 0px 0px 0px 300px;
+ }

@@ -10,6 +10,14 @@ body {
   margin-right: 10%;
 }
 
+.navbar_z_index{
+  z-index: 9999;
+
+}
+.footer_z_index{
+  z-index: 9999;
+}
+
 #prevBtn, #nextBtn{
   width: 38px;
   height: 38px;

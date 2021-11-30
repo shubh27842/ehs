@@ -6,7 +6,7 @@ import "./printPromise.css"
 
 const Card = (props) => {
     return (
-        <div className="inline promiseCard p-2 py-4 mx-5 my-2">
+        <div className="inline promiseCard p-2 py-4 marginPP my-3">
             <img src={props.imgsrc} className="cardImg " alt="promiseTag" />
             <p className=" titleText">{props.title}</p>
             <p className=" descText">{props.desc}</p>
@@ -16,9 +16,9 @@ const Card = (props) => {
 
 const PrintPromise = () => {
     return(
-    <div className="m-2 px-2" style={{ backgroundColor: "#F6F6F6", }}>
+    <div className="mx-auto py-2" style={{ backgroundColor: "#F6F6F6", }}>
         <p className="promiseHeading   mx-auto">The EHS Prints Promise</p>
-        <div className="container-fluid py-5">
+        <div className="container-fluid py-5 mx-auto text-center">
             <div className="mx-auto text-center">
             <Card imgsrc={tag1} className="col-md-4 " title="Effusive Designs" desc="We provide you a huge variety of highly impactful Visual communications designed by skilled artists all around the Globe!" />
             <Card imgsrc={tag2} className="col-md-4" title="High Quality Prints" desc="Prints from all our category are printed &nbsp;digitally on best quality durable materials providing effective communication!" />

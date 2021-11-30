@@ -31,7 +31,7 @@ import CartContext from "../../helper/cartContext";
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import './PosterProductPage.css';
 
 import { ControlCamera, NavigateBefore, NavigateNext, ShoppingBasketOutlined, ShoppingCartOutlined, StarBorderOutlined, StarOutlined, StarRateOutlined } from "@material-ui/icons";
 import styled from "styled-components";
@@ -990,8 +990,8 @@ const changeDimension = (e) => {
                     </div>
                     */}
                     {catSlug==='posters'?
-                    <div className=" mt-0 mt-sm-0 d-flex flex-column coflex-row justify-content-between" >
-                        <p className="mt-sm-0 mb-2  align-self-sm-start align-self-start selectHead  ">Select Material</p>
+                    <div className=" coflex-row " >
+                        <p className=" selectHead text-center ">Select Material</p>
                         {/* product.materialDimension ? (
                             <div className="d-flex justify-content-between mr-0  ">
                             <div className="posterMaterialDimension selected" id="m1" role="button" onClick={changeMaterialTo1} >
@@ -1008,32 +1008,25 @@ const changeDimension = (e) => {
                             </div>
                         </div>
                         ) : "" */}
-                        <div className="d-flex  mr-0   ">
+                        <div className="mx-auto text-center">
                         {
                             matNew ? matNew.map((val,i)=>{
                                 return(
-                                    <div className="posterMaterialDimension  mat mr-1"  role="button" onClick={(e)=>changeMaterial(e)} style={{
-                                        minHeight: '160px'
-                                    }} >
+                                    <div className="posterMaterialDimension mat mx-1"  role="button" onClick={(e)=>changeMaterial(e)} style={{display:"inline-block", width:"30%"}} >
                                         <div clasname="dimension_image_alignment" >
-                                        <img src={val.material_img? val.material_img: ""} className="materialImg2Dimension " alt="material" style={{
-                                                marginLeft:5,
-                                            }} ></img>
+                                            <img src={val.material_img? val.material_img: ""} className="imgDim mx-auto" alt="material"></img>
                                         </div>
-                                        <p className="text-center materialTextDimension  mt-auto " style={{
-                                           
-
-                                        }}>{ val.material_title ? val.material_title: "No Material"}</p>
+                                        <p className="text-center materialTextDimension  mx-auto my-2 px-2">{ val.material_title ? val.material_title: "No Material"}</p>
                                     </div>
                                 )
                             }): ""
                         }
                         </div>
                     </div>:null}
-                    
-                    <div className=" d-flex flex-column flex-row justify-content-between my-3" >
-                        <p className=" align-self-sm-start align-self-start selectHead">Select Dimensions</p>
-                        <div className="d-flex justify-content-start">
+                    <br/>
+                    <div className=" my-3 mx-auto text-center" >
+                        <p className="selectHead">Select Dimensions</p>
+                        <div className="mx-auto text-center">
                             {/* <div className=" ml-sm-0 posterMaterialDimension selected" id="d1" role="button" onClick={changeDimensionToS} >
                                 <img src={dimNew? dimNew[0].dimension_img: ""} className="posterDimension1 mt-2" alt="dimension" ></img>
                                 <p className="text-center posterDimensionText ">{dimNew? dimNew[0].dimension_title: "No Dimension"}</p>
@@ -1049,25 +1042,13 @@ const changeDimension = (e) => {
                             {
                                 dimNew ? dimNew.map((val,i)=>{
                                     return(
-                                        <div className="posterMaterialDimension   dim" role="button" id="d2" onClick={(e)=>changeDimension(e)} style={{
-                                            display: "flex",
-                                            flexDirection:'column',
-                                            justifyContent:'space-between',
-                                            alignItems:'center',
-                                            marginLeft:3,
-                                        }}>
+                                        <div className="posterMaterialDimension inline mx-1 dim text-center" role="button" id="d2" onClick={(e)=>changeDimension(e)}>
                                              <div clasname="dimension_image_alignment" >
-                                            <img src={val.dimension_img? val.dimension_img: ""} className="posterDimension2 mt-2 " alt="dimension" style={{
+                                            <img src={val.dimension_img? val.dimension_img: ""} className="posterDimension2 mt-2 imgDim" alt="dimension" style={{
                                                 marginLeft:0,
                                             }}></img>
                                             </div>
-                                            <p className="text-center posterDimensionText  " style={{
-                                                
-                                                textOverflow:"ellipsis",
-                                                width: '60px',
-                                                overflow: 'hidden',
-                                                textAlign:'center'
-                                            }}>{val.dimension_title ? val.dimension_title: "No Dimension"}</p>
+                                            <p className="posterDimensionText px-2">{val.dimension_title ? val.dimension_title: "No Dimension"}</p>
                                        </div>
                                     )
                                 }): ""

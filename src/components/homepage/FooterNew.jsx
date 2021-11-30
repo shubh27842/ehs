@@ -20,24 +20,24 @@ const Footer = (props) => {
    }, [props.loginResponse]);
     return (
 
-        <div className="container-fluid" style={{ background: "#003459"}}>
-            <div className="row p-5 mx-auto">
+        <div className="container-fluid " style={{ background: "#003459"}}>
+            <div className="row p-5 mx-auto ">
 
-                <div className="col-md-5 text-left inline py-4 mx-auto">
+                <div className="col-md-5 smallCenter inline py-4 mx-auto">
                     <img src={EhsLogo} alt="logo" className="mr-4"/>
-                    <input type="text" placeholder="  search" className="inline footerInput"  onChange={(e) => setFind(e.target.value)}/>
-                    <SearchIcon className="footerSearchIcon" id="footerSearchIcon" role="button" />
+                    <input type="text" placeholder="  search" className=" mt-2 inline footerInput align-middle"  onChange={(e) => setFind(e.target.value)}/>
+                    <SearchIcon className="mt-2 footerSearchIcon align-middle" id="footerSearchIcon" role="button" />
                     
                     <p className="footerHeadN mt-4">Contact Us</p>
-                    <p className="footerText">Timings (Mon-Sat: 09:00 - 17:00)<br/>45, old Agrawal Nagar, Indore, Madhya Pradesh, Pin: 452001<br/>Mobile No : +91 9632418602<br/>Email ID : hello@ehsposters.com</p>
-                    <div className=" mt-4 inline mx-auto">
+                    <p className="footerText smallCenter">Timings (Mon-Sat: 09:00 - 17:00)<br/>45, old Agrawal Nagar, Indore, Madhya Pradesh, Pin: 452001<br/>Mobile No : +91 9632418602<br/>Email ID : hello@ehsposters.com</p>
+                    <div className=" mt-1 inline mx-auto">
                         < a href="https://www.facebook.com/ehsprints/"><FacebookIcon className="footerIcon"  /></a>
-                        <a href =""><InstagramIcon className="footerIcon mx-5" /></a>
-                        <a href ="https://twitter.com/ehsprints"><TwitterIcon className="footerIcon mr-5" /></a>
+                        <a href =""><InstagramIcon className="footerIcon mx-4" /></a>
+                        <a href ="https://twitter.com/ehsprints"><TwitterIcon className="footerIcon mr-4" /></a>
                         <a href ="https://www.linkedin.com/company/ehsprints/?originalSubdomain=in"><LinkedInIcon className="footerIcon"  /></a>
                     </div>
                 </div>
-                <div className="col-md-2 text-left inline py-4 mx-auto">
+                <div className="col-md-2 smallCenter inline py-4 mx-auto">
                     <p className="footerHeadN">Products</p>
                     <Link to="/cat/posters" className="footerText">Posters</Link><br/>
                     <Link to="/cat/signages" className="footerText">Signages</Link><br/>
@@ -46,7 +46,7 @@ const Footer = (props) => {
                     <Link to="/cat/asset-markings" className="footerText">Asset Markings</Link><br/>
                     <Link to="/" className="footerText">Create Your Own</Link><br/>
                 </div>
-                <div className="col-md-2 text-left inline py-4 mx-auto">
+                <div className="col-md-2 smallCenter inline py-4 mx-auto">
                     <p className="footerHeadN">My Account</p>
                     <Link to="/" className="footerText">Profile</Link><br/>
                     <Link to="/" className="footerText">Order History</Link><br/>
@@ -54,7 +54,7 @@ const Footer = (props) => {
                     <Link to="/register" className="footerText">Create an Account</Link><br/>
                     {/* <Link to="/" className="footerText">New User Guide</Link><br/> */}
                 </div>
-                <div className="col-md-2 row text-left inline py-4 mx-auto">
+                <div className="col-md-2 row smallCenter inline py-4 mx-auto">
                     <p className="footerHeadN">About</p>
                     <Link to="/privacy-policy" className="footerText">Privacy Policy</Link><br/>
                     <Link to="/contact" className="footerText">Support</Link><br/>

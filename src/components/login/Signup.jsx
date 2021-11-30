@@ -96,7 +96,7 @@ const Signup = (props) => {
 
   return (
     <>
-        <div className="loginPage p-1 pt-5 pb-5 p-sm-3 mx-auto mt-5 mt-sm-4 mb-5 mb-sm-4 d-block">
+        <div className="loginPage">
         <div className="d-flex justify-content-center align-items-center">
           <AccountBoxIcon id="accountIcon" />
           <img

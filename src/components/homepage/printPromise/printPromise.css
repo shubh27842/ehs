@@ -66,6 +66,16 @@
 .upperBox{
     width: 795px;
 }
+.marginPP{
+    margin-right:2%;
+    margin-left:2%;
+}
+@media (max-width: 480px){
+    .marginPP{
+        margin-right:0;
+        margin-left:0;
+    }
+}
 /* @media (max-width: 480px){
     .upperBox{
         width: 350px;

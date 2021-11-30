@@ -1,0 +1,87 @@
+/* -----------------------diy-container-pictograms----------------------- */
+.diy-container-pictograms{
+    height: 602px;
+    width: 524px;
+    background: #003459;
+    border-radius: 0 16px 16px 0;
+    z-index: 10;
+    /* position: relative; */
+    /* text-align: center; */
+    /* transition: 0.3s all cubic-bezier(0.22, 0.61, 0.36, 1); */
+   }
+   .pictograms-h4{
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 0 !important;
+    margin-left: 20px;
+   }
+   .pictograms-button-group{
+    align-items: center;
+   }
+   .pictograms-button-group-main{
+    padding-right: 10px;
+   }
+   .container-icon{
+    margin: 6px 21px 0 12px;
+   }
+   .pictograms-logo{
+    width: 151px;
+    height: 137px;
+    background: #fff;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 5px 10px 10px;
+   }
+                                /* button */
+   .btn-class{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 7px;
+    margin: 8px 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    width: 157px;
+    height: 40px;
+    box-shadow: 5px 5px 11px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 5px 5px 11px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 5px 5px 11px -3px rgba(0,0,0,0.75);
+    border: none;
+    
+   }
+   .btn-road-signs{
+    background-image: linear-gradient(145deg, #007ED8, #008BB9);
+   }
+   .btn-flammable{
+    background-image: linear-gradient(145deg, #56CCF2, #008BB8);
+   }
+   .btn-emergency{
+    background-image: linear-gradient(145deg, #057CD1, #1056A7);
+   }
+   .btn-radiation{
+    background-image: linear-gradient(145deg, #569FF2, #0C70B7);
+   }
+   .btn-flammable-two{
+    background-image: linear-gradient(145deg, #56CCF2, #008BB8);
+   }
+   .btn-road-signs-two{
+    background-image: linear-gradient(145deg, #0B5F9B, #008BB8);
+   }
+   .btn-class svg{
+    margin-right: 8px;
+    height: 17px;
+    width: 24px;
+   }
+   .btn-class p{
+    margin-bottom: 0;
+   }
+   .pictograms-container-icon{
+    overflow: auto;
+    height: 325px;
+    width: auto;
+    padding: 0px 12px 0px 15px;
+}

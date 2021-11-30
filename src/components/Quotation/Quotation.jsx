@@ -11,6 +11,7 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import { getDistributors, addDistributor } from "../../helper/apiPath";
 import swal from "sweetalert";
+import "./Quotation.css";
 
 const Supplier = (props) => {
   const [details, setDetails] = React.useState("");
@@ -32,50 +33,54 @@ const Supplier = (props) => {
 
   return (
     <>
-      <Grid className="ml-3 d-block" style={{ width: "600px" }}>
-        <Grid.Row>
-          <p className="choose">CHOOSE A SUPLIER</p>
-        </Grid.Row>
-        <Grid.Row style={{ marginTop: "-12px" }}>
-          <p className="chooseUnder">
+      <div className="mx-auto px-2">
+          <div className="hideOnSmall inline">
+            <span className="numbering">1</span>
+          </div>
+          
+          <div className="inline ml-2 widthChanger marginChanger">
+          
+          <p className="choose text-left">CHOOSE A SUPLIER</p>
+        <div className="text-left">
+          <p className="chooseUnder text-left">
             You can choose a suitable distributor from the dropdown list
           </p>
-        </Grid.Row>
+        </div>
         {props.add ? (
           <>
-            <Grid.Row className="mt-3">
+            <div className="mt-3">
               <TextField
                 label="Add Distributor"
-                style={{ width: " 506px" }}
+                style={{ width: " 100%" }}
                 variant="outlined"
                 onChange={(e) => {
                   setDistributor(e.target.value);
                 }}
               />
-            </Grid.Row>
-            <Grid.Row className="mt-3">
+            </div>
+            <div className="mt-3">
               <TextField
                 label="Add Details"
-                style={{ width: " 506px" }}
+                style={{ width: " 100%" }}
                 variant="outlined"
                 onChange={(e) => {
                   setDet(e.target.value);
                 }}
               />
-            </Grid.Row>
-            <Grid.Row className="mt-3 mb-3">
+            </div>
+            <div className="mt-3 mb-3">
               <button id="loginBtn" onClick={addDistributors}>
                 ADD
               </button>
-            </Grid.Row>
+            </div>
           </>
         ) : (
           <>
-            <Grid.Row className="mt-3">
+            <div className="mt-3">
               <TextField
                 select
                 label="Select Distributor"
-                style={{ width: " 506px" }}
+                style={{ width: " 100%" }}
                 variant="outlined"
                 onChange={(e) => {
                   props.setBuyer(true);
@@ -89,26 +94,27 @@ const Supplier = (props) => {
                   </MenuItem>
                 ))}
               </TextField>
-            </Grid.Row>
-            <Grid.Row className="mt-3">
+            </div>
+            <div className="mt-3">
               <TextField
                 value={details}
                 label="Seller Details"
-                style={{ width: " 506px" }}
+                style={{ width: " 100%" }}
                 variant="outlined"
               ></TextField>
-            </Grid.Row>
-            <Grid.Row className="mt-1 ml-5 pl-5">
-              <p className="clickHere">
+            </div>
+            <div className="mt-1 text-center">
+              <p className="clickHere mb-4">
                 Could not find your Distributor?{" "}
                 <a href="#1" onClick={() => props.setAdd(true)}>
                   Click here to Add
                 </a>
               </p>
-            </Grid.Row>
+            </div>
           </>
         )}
-      </Grid>
+        </div>
+      </div>
     </>
   );
 };
@@ -116,29 +122,33 @@ const Supplier = (props) => {
 const BuyersDetail = (props) => {
   return (
     <>
-      <Grid className="ml-3" style={{ width: "600px" }}>
-        <Grid.Row>
-          <p className={props.buyer ? "choose" : "fill"}>
-            FILL BUYER’S DETAILS
-          </p>
-        </Grid.Row>
-        <Grid.Row style={{ marginTop: "-12px" }}>
-          <p className="chooseUnder">
+      <div className="leftCenter pl-2">
+        <div className="inline hideOnSmall">
+          <span className="numbering" style={{backgroundColor:"grey"}}>2</span>
+        </div>
+        <div className="inline ml-2 widthChanger">
+          <div className="marginChanger">
+            <p className={props.buyer ? "choose leftCenter" : "fill leftCenter"} >
+              FILL BUYER’S DETAILS
+            </p>
+          </div>
+        <div>
+          <p className="chooseUnder leftCenter">
             Please check all details as would you want them to be in the
             performa invoice
           </p>
-        </Grid.Row>
+        </div>
         {props.buyer ? (
           <>
             <form>
-              <Grid.Row className="mt-3">
+              <div className="mt-3">
                 <TextField
                   label="Company Name"
                   style={{ width: " 506px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <TextField
                   label="GST no"
                   style={{ width: " 250px", marginRight: "6px" }}
@@ -149,8 +159,8 @@ const BuyersDetail = (props) => {
                   style={{ width: " 250px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <TextField
                   label="State"
                   style={{ width: " 250px", marginRight: "6px" }}
@@ -161,60 +171,61 @@ const BuyersDetail = (props) => {
                   style={{ width: " 250px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <TextField
                   label="Address1"
                   style={{ width: " 506px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <TextField
                   label="Address2"
                   style={{ width: " 506px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <TextField
                   label="Country"
                   style={{ width: " 506px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <TextField
                   label="Contact Person Name"
                   style={{ width: " 506px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <TextField
                   label="Contact Person Mobile"
                   style={{ width: " 506px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <TextField
                   label="Contact Person Email"
                   style={{ width: " 506px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <TextField
                   label="Billing Address"
                   style={{ width: " 506px" }}
                   variant="outlined"
                 ></TextField>
-              </Grid.Row>
+              </div>
             </form>
           </>
         ) : null}
-      </Grid>
+        </div>
+      </div>
     </>
   );
 };
@@ -222,11 +233,11 @@ const BuyersDetail = (props) => {
 const Shipping = (props) => {
   return (
     <>
-      <Grid className="ml-3" style={{ width: "600px" }}>
-        <Grid.Row>
+      <div className="mx-auto" style={{ width: "110%" }}>
+        <div>
           <p className="fill">BILLING ADDRESS</p>
-        </Grid.Row>
-        <Grid.Row style={{ marginTop: "-12px" }}>
+        </div>
+        <div className="text-center">
           <input
             type="checkbox"
             id="shippingAdd"
@@ -238,50 +249,54 @@ const Shipping = (props) => {
           <label htmlFor="shippingAdd" className="chooseUnder">
             Shipping address different from Billing address?
           </label>
-        </Grid.Row>
+        </div>
         {props.billing ? (
           <>
-            <Grid.Row className="mt-3">
+            <div className="mt-3">
               <TextField
                 label="Address1"
-                style={{ width: " 506px" }}
+                style={{ width: " 100%" }}
                 variant="outlined"
               ></TextField>
-            </Grid.Row>
-            <Grid.Row className="mt-3">
+            </div>
+            <div className="mt-3">
               <TextField
                 label="Address2"
-                style={{ width: " 506px" }}
+                style={{ width: " 100%" }}
                 variant="outlined"
               ></TextField>
-            </Grid.Row>
-            <Grid.Row className="mt-3">
+            </div>
+            <div >
               <TextField
+              className="mt-3"
                 label="State"
-                style={{ width: " 250px", marginRight: "6px" }}
+                style={{ width: " 100%", marginRight: "6px" }}
                 variant="outlined"
               ></TextField>
               <TextField
+              className="mt-3"
                 label="City"
-                style={{ width: " 250px" }}
+                style={{ width: " 100%" }}
                 variant="outlined"
               ></TextField>
-            </Grid.Row>
-            <Grid.Row className="mt-3 mb-3">
+            </div>
+            <div className=" mb-3">
               <TextField
+              className="mt-3"
                 label="Country"
-                style={{ width: " 250px", marginRight: "6px" }}
+                style={{ width: " 100%", marginRight: "6px" }}
                 variant="outlined"
               ></TextField>
               <TextField
+              className="mt-3"
                 label="Pincode"
-                style={{ width: " 250px" }}
+                style={{ width: " 100%" }}
                 variant="outlined"
               ></TextField>
-            </Grid.Row>
+            </div>
           </>
         ) : null}
-      </Grid>
+      </div>
     </>
   );
 };
@@ -326,55 +341,36 @@ const Quotation = (props) => {
   return (
     <>
     
-        <div
-            style={{
-              width: "660px",
-              height: "710px",
-              borderTopRightRadius: "15px",
-              borderTopLeftRadius: "15px",
-            }}
-        className="mx-auto mt-5 d-block "
-        
-      >
-   
-        <div className="quotation mb-5 p-3 pl-4 " >
+        <div className="my-4 mainBody py-3 container">
           
-
-          <div >
-          <Grid.Row
-            className="quotation1 mt-1 "
-            style={{
-              fontFamily: "Source Sans Pro",
-              fontStyle: "normal",
-              fontWeight: "600",
-              fontSize: "36px",
-              lineHeight: "36px",
-              color: "#003459",              
-            }}
-          >
-            PROFORMO INVOICE
-          
-          </Grid.Row>
+          <div className="myQuotation mx-auto" >
             
-          </div>
-          
+            {/* Cross marks */}
+            <div className="text-right cross_icon mx-auto">
+              <Link to="/cart">
+                <HighlightOffIcon
+                  style={{ color: "black", }}
+                />
+              </Link>
+            </div>
 
-          <Grid.Row columns="2" className="mt-4 " style={{height: "94%"}}>
-            <Grid.Column style={{ width: "10%" }}>
-              <div className={classes.root}>
-                <Stepper activeStep={activeStep} orientation="vertical">
+            <div className="quotation1 mt-2">
+              PROFORMO INVOICE
+            </div>
+
+
+            {/* <Stepper activeStep={activeStep} orientation="vertical">
                   {steps.map((label, index) => (
                     <Step key={label} style={{ height: "210px" }}>
                       <StepLabel>{label}</StepLabel>
                     </Step>
                   ))}
-                </Stepper>
-              </div>
-            </Grid.Column>
-            <Grid.Column
+                </Stepper> */}
+          <div className="mx-auto">
+            <div
               style={{ width: "80%", marginLeft: "20px", marginTop: "22px" }}
             >
-              <Grid.Row>
+              <div>
                 <Supplier
                   setActiveStep={setActiveStep}
                   setBuyer={setBuyer}
@@ -382,41 +378,28 @@ const Quotation = (props) => {
                   add={add}
                   setAdd={setAdd}
                 />
-              </Grid.Row>
-              <Grid.Row>
+              </div>
+              <div>
                 <BuyersDetail buyer={buyer} />
-              </Grid.Row>
-              <Grid.Row className="mt-3">
+              </div>
+              <div className="mt-3">
                 <Shipping billing={billing} setBilling={setBilling} />
-              </Grid.Row>
-            </Grid.Column>
-            <Grid.Row
-              style={
-                buyer
-                  ? { marginLeft: "69px" }
-                  : { marginLeft: "69px", marginTop: "-105px" }
-              }
-            >
+              </div>
+            </div>
+            <div className="text-center mx-auto">
               <button id="loginBtn" className="my-3">PREVIEW PROFORMA</button>
-            </Grid.Row>
-            <Grid.Row className="mt-2 pl-5 pr-5">
+            </div>
+            <div className="my-2 px-5">
               <p className="chooseUnder">
                 Note: Creating performa invoice is a record of intent of the
                 seller to supply goods in the cart. Supplies will be subject to
                 issue of format purchase order as per terms of performa invoice.
-              </p>
-            </Grid.Row>
-          </Grid.Row>
+              </p><br/>
+            </div>
+          </div>
         </div>
         
       </div>
-      <div>
-          <Link to="/cart">
-            <HighlightOffIcon
-              style={{ color: "black", position: "absolute", right: "405px",top: "140px" }}
-            />
-          </Link>
-          </div>
     </>
   );
 };

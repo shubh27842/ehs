@@ -1,0 +1,54 @@
+body{
+    font-family: 'Source Sans Pro';
+}
+.mainBody{
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+.inline{
+    display: inline-block;
+    position: relative;
+}
+.quotation1{
+    font-weight: 600;
+    font-size: 36px;
+    color: #003459;
+}
+.numbering{
+    background-color: #003459;
+    border-radius: 50%;
+    color: white;
+    padding: 2px 8px;
+    vertical-align: middle;
+}
+.myQuotation{
+    width: 65%;
+    border: 1px #acaaaa;
+    border-radius: 15px;
+    box-shadow: 1px 2px 10px 5px #cfcfcf
+    
+}
+.widthChanger{
+    width: 90%;
+}
+.leftCenter{
+    text-align: left;
+}
+@media screen and (max-width: 768px) {
+    .hideOnSmall{
+        visibility: hidden;
+        width: 0 !important;
+    }
+    .myQuotation{
+        width: 100%;
+    }
+    .widthChanger{
+        width: 110%;
+    }
+    .leftCenter{
+        text-align: center;
+    }
+    .marginChanger{
+        margin-top: -5%;
+    }
+}

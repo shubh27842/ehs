@@ -185,7 +185,8 @@ const ProductList2 = (props) => {
         <div className="productListing ">
         
        {(subCatSlug === "bestsellers")? (bestSeller && bestSeller.map((ncard,i) =>{
-   
+          // console.log(bestSeller);
+          // return;
             return(
               <ProductCard 
                 product={ncard}

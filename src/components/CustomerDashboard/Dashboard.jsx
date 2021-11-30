@@ -1369,8 +1369,8 @@ const Orders = () => {
       
       {
         orderData ? orderData.map((order,i)=>{
-          // console.log(orderData)
-          // return;
+          console.log(orderData)
+          return;
           return(
             <>
             <OrderDetailCard 

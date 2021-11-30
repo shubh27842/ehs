@@ -9,15 +9,18 @@
 .inline{
   display: inline-block;
 }
+.inlineTemp{
+  display: inline-block;
+}
 .divhr{
   border-color: grey;
-  border-width: 0.15rem;
-  filter: blur(2px);
+  border-width: 0.05rem;
+  filter: blur(1px);
   opacity: 80%;
   width: 80%;
   position: relative;
-  top: -70px;
-  z-index: -999;
+  top:-38px;
+  z-index: 0;
 }
 .myBoxBorder{
   border:solid 4px;
@@ -30,7 +33,6 @@
   width: 62px;
   height: 62px;
   color: #003459;
-  margin-right: 20px;
 }
 #ehsLogoImg {
   height: 50px;
@@ -41,17 +43,14 @@
 #loginUserEmail,
 #loginUserPass {
   margin: 0 auto;
-  width: 506px;
+  width: 80%;
   height: 45px;
+  line-height: 45px;
   border: 1px solid #757575;
-  box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 2px;
   font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 24px;
-  text-indent: 10px;
+  vertical-align: middle;
+  text-indent: 26px;
   color: #757575;
 }
 
@@ -98,19 +97,17 @@ margin: 5px 0;
 }
 .keepSignedIn{
   font-family: Lato;
-font-style: normal;
 font-weight: 500;
-font-size: 18px;
-line-height: 22px;
+font-size: 15px;
 color: #757575;
 margin-left: 5px;
 }
+
 .forgotPassword{
   font-family: Lato;
-font-style: normal;
 font-weight: 500;
-font-size: 18px;
-line-height: 22px;
+font-size: 15px;
+margin-bottom:0px;
 color: #56CCF2;
 
 }
@@ -126,29 +123,12 @@ color: #56CCF2;
   font-size: 1.3rem;
   text-align: center;
   padding: 5px;
+  margin-top: 1%;
+  margin-bottom: 5%;
 }
-
-#loginUserEmail1 {
-  margin: 0 auto;
-  width: 235px;
-  height: 55px;
-  left: 467px;
-  top: 283px;
-  /* grey */
-  border: 1px solid #757575;
-  box-sizing: border-box;
-  border-radius: 8px;
-
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 24px;
-  /* identical to box height */
-
-  /* grey */
-  text-indent: 10px;
-  color: #757575;
+.negMargin{
+  position: relative;
+  margin-top: -3%;
 }
 
 #loginUseraddress {
@@ -246,28 +226,7 @@ textarea {
   color: #757575;
 }
 
-.loginUserEmail1 {
-  margin: 0 auto;
-  width: 235px;
-  height: 55px;
-  left: 467px;
-  top: 283px;
-  /* grey */
-  border: 1px solid #757575;
-  box-sizing: border-box;
-  border-radius: 8px;
 
-  font-family: Lato;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 24px;
-  /* identical to box height */
-
-  /* grey */
-  text-indent: 10px;
-  color: #757575;
-}
 .note{
   width: 490px;
   font-family: Lato;
@@ -289,13 +248,16 @@ text-decoration-line: underline;
 color: #0962A2;
 }
 
-.resendOTP{
-  position: absolute;
-  top: 14px;
-  right: 30px;
-  
+.resendOTP, .resendOTP:hover{
+  position: relative;
+  background-color: #003459;
+  color: white;
+  font-family: "Lato";
+  font-size: "16px";
 }
-
+.width{
+  max-width: 60%;
+}
 
 
 .errorMsg{
@@ -331,12 +293,6 @@ color: #0962A2;
     width: 131px;
     height: 40px;
   }
-  #loginUserEmail,
-#loginUserPass{
-  width: 310px;
-  margin: 0;
-  font-size: 18px;
-}
 .keepSignedIn, .forgotPassword{
   font-size: 14px;
   line-height: 17px;
@@ -366,9 +322,6 @@ color: #0962A2;
   font-size: 16px;
   line-height: 19px;
   text-align: center;
-}
-.resendOTP{
-  font-size: 12px!important;
 }
 
 }
@@ -438,8 +391,21 @@ color: #0962A2;
   line-height: 24px;
   text-align: center;
   color: #FFFFFF;
-  
 }
+
+.widthControl{
+  width: 60%;
+}
+.social_login button{
+  border-color: #8c8c8c;
+}
+.social_login p{
+  font-size: 14px;
+}
+.inputForm::-webkit-input-placeholder {
+  font-size: 15px;
+}
+
 #OTP, #PASSWORD, #C_PASSWORD, #SUBMITBTN{
   display: none;
 }
@@ -471,5 +437,19 @@ color: #0962A2;
       height: 40px;
       font-size: 18px;
       line-height: 22px;
+    }
+    .widthControl{
+      width: 80%;
+    }
+    .inlineTemp{
+      display: block;
+    }
+    .width{
+      max-width: 100%;
+    }
+    .resendOTP{
+      margin-top: 2%;
+      font-size: 14px;
+      padding: 8px 10px;
     }
 }

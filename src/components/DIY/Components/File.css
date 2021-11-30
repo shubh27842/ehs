@@ -1,0 +1,33 @@
+[type="file"] {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    white-space: nowrap;
+    width: 1px;
+  }
+  [type="file"] + label {
+    /* File upload button styles */
+    color: #000;
+    background: #fff;
+    width: 242px;
+    height: 59px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  [type="file"]:focus + label,
+  [type="file"] + label:hover {
+    /* File upload hover state button styles */
+  }
+  
+  [type="file"]:focus + label {
+    /* File upload focus state button styles */
+    /* align-items: center;
+    padding: 10px; */
+  }
