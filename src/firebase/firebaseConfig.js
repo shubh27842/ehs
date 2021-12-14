@@ -12,7 +12,7 @@ const firebaseConfig = {
 
   // fill your credentials
 
-  
+
 };
 
 // // Initialize Firebase
